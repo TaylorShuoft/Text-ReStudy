@@ -1,41 +1,70 @@
 <template>
   <div class="home">
+    <!-- 页面标题 -->
     <div class="header">
-      <h1>题目汇总</h1>
-      <span class="progress-bar">
-        <div class="progress" :style="{ width: progress + '%' }"></div>
-      </span>
-      <p>{{ completedQuestions }} / {{ totalQuestions }} 题已完成</p>
+      <h1>考试题库</h1>
     </div>
-    
-    <div class="plan">
-      <div class="plan-item">
-        <h2>需要学习</h2>
-        <p class="question-count">{{ newQuestions }} 题</p>
-      </div>
-      <div class="plan-item">
-        <h2>需要复习</h2>
-        <p class="question-count">{{ reviewQuestions }} 题</p>
+
+    <!-- 选择科目按钮 -->
+    <div v-if="!isSubjectSelected && !showSubjects">
+      <button class="start-button" @click="showSubjects = true">
+        选择科目
+      </button>
+    </div>
+
+    <!-- 科目选择界面 -->
+    <div v-if="showSubjects && !isSubjectSelected" class="subject-list">
+      <h2>请选择科目</h2>
+      <div
+        v-for="(categories, subject) in quizData"
+        :key="subject"
+        class="subject"
+      >
+        <button
+          class="subject-button"
+          @click="selectSubject(subject)"
+        >
+          {{ subject }}
+        </button>
       </div>
     </div>
 
-    <button class="start-button" @click="$router.push('/quiz')">开始刷题吧！</button>
+    <!-- 开始答题按钮 -->
+    <div v-if="isSubjectSelected">
+      <p>已选择科目：<strong>{{ selectedSubject }}</strong></p>
+      <button class="start-button" @click="startQuiz">
+        开始答题吧！
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
+// 导入题库数据
+import quizData from "@/assets/quiz.json";
+
 export default {
   data() {
     return {
-      totalQuestions: 100,   // 总题目数
-      completedQuestions: 25, // 已完成的题目数（示例）
-      newQuestions: 40,      // 需要学习的题目数
-      reviewQuestions: 10,    // 需要复习的题目数
+      quizData: {}, // 存储题库数据
+      showSubjects: false, // 控制是否显示科目选择界面
+      isSubjectSelected: false, // 是否已经选择了科目
+      selectedSubject: "", // 已选择的科目
     };
   },
-  computed: {
-    progress() {
-      return (this.completedQuestions / this.totalQuestions) * 100; // 进度计算
+  created() {
+    // 加载题库数据
+    this.quizData = quizData;
+  },
+  methods: {
+    selectSubject(subject) {
+      this.selectedSubject = subject; // 保存选择的科目
+      this.isSubjectSelected = true; // 标记科目已选择
+      this.showSubjects = false; // 隐藏科目选择界面
+    },
+    startQuiz() {
+      // 跳转到刷题页面，并传递选择的科目
+      this.$router.push({ path: "/quiz", query: { subject: this.selectedSubject } });
     },
   },
 };
@@ -45,40 +74,45 @@ export default {
 .home {
   padding: 20px;
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
 .header {
   margin-bottom: 20px;
 }
 
-.progress-bar {
-  background-color: #eee;
-  border-radius: 5px;
-  height: 10px;
-  position: relative;
-  margin: 10px 0;
+.header h1 {
+  font-size: 24px;
+  color: #333;
 }
 
-.progress {
-  background-color: #4caf50;
-  height: 100%;
-  border-radius: 5px;
-}
-
-.plan {
-  display: flex;
-  justify-content: space-around;
+.subject-list {
   margin: 20px 0;
 }
 
-.plan-item {
-  flex: 1;
-  text-align: center;
+.subject-list h2 {
+  margin-bottom: 10px;
+  color: #007bff;
+  font-size: 20px;
 }
 
-.question-count {
-  font-size: 24px;
-  font-weight: bold;
+.subject {
+  margin: 10px 0;
+}
+
+.subject-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 200px;
+}
+
+.subject-button:hover {
+  background-color: #388e3c;
 }
 
 .start-button {
@@ -94,5 +128,10 @@ export default {
 
 .start-button:hover {
   background-color: #0056b3;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 </style>
