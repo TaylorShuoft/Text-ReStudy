@@ -1,8 +1,9 @@
 <template>
-    <div class="select-quiz" :class="{ hidden: hidden }">
+  <div class="select-quiz" :class="{ hidden: hidden }">
+    <div class="container">
       <!-- 显示/隐藏按钮 -->
       <button class="toggle-button" @click="toggleVisibility">答题卡</button>
-  
+
       <!-- 按题型分块显示 -->
       <div class="quiz-map-container" v-if="!hidden">
         <div v-for="(questions, type) in groupedQuestions" :key="type" class="quiz-section">
@@ -21,36 +22,44 @@
         </div>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    props: {
-      groupedQuestions: Object, // 按题型分组后的题目数据
-      currentQuestionIndex: Number, // 当前题目索引
-      answers: Array // 答案状态数组
-    },
-    data() {
-      return {
-        hidden: true // 答题卡是否隐藏
-      };
-    },
-    methods: {
-      toggleVisibility() {
-        this.hidden = !this.hidden;
-      }
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    groupedQuestions: Object, // 按题型分组后的题目数据
+    currentQuestionIndex: Number, // 当前题目索引
+    answers: Array // 答案状态数组
+  },
+  data() {
+    return {
+      hidden: true // 答题卡是否隐藏
+    };
+  },
+  methods: {
+    toggleVisibility() {
+      this.hidden = !this.hidden;
+      this.$emit('toggle-blur', !this.hidden);
     }
-  };
-  </script>
-  
-  
-  <style scoped>
+  }
+};
+</script>
+
+<style scoped>
 .select-quiz {
   position: fixed;
   bottom: 10px;
-  left: 45%; /* 将 left 从 50% 调整为 45% */
-  transform: translateX(-50%); /* 保持 transform 不变 */
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .toggle-button {
@@ -77,7 +86,8 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
-  height: auto;
+  max-height: 400px; /* 设置最大高度 */
+  overflow-y: auto; /* 添加垂直滚动条 */
   text-align: center;
 }
 

@@ -1,0 +1,135 @@
+<template>
+    <div class="files-page">
+      <h1>文件柜</h1>
+      <!-- 左上角返回按钮 -->
+    <button class="back-button" @click="goHome">返回首页</button>
+      <div class="file-cabinet">
+        <div v-for="file in files" :key="file.name" class="file-card">
+          <div class="file-icon">
+            <!-- 图标 -->
+            <img src="https://img.icons8.com/ios/50/000000/file.png" alt="file-icon" />
+          </div>
+          <div class="file-info">
+            <!-- 文件名 -->
+            <p class="file-name">{{ file.name }}</p>
+            <!-- 下载按钮 -->
+            <a :href="file.url" target="_blank" download class="download-button">下载</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    name: "FilesPage",
+    data() {
+      return {
+        files: [
+          { name: "py题.docx", url: "/Files/py题.docx" },
+          { name: "数据分析题.docx", url: "/Files/数据分析题.docx" },
+          { name: "Java考试题.docx", url: "/Files/Java考试题.docx" },
+          { name: "操作系统题.docx", url: "/Files/操作系统题.docx" },
+        ],
+      };
+      
+    },
+    methods: {
+  goHome() {
+    this.$router.push("/"); // 返回首页
+  },
+}
+  };
+  </script>
+  
+  <style scoped>
+  .files-page {
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* 浅灰背景像书架背景 */
+    min-height: 100vh;
+  }
+  
+  .files-page h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .file-cabinet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 每行两列 */
+    gap: 15px; /* 卡片间隔 */
+    justify-items: center;
+    padding: 10px;
+  }
+  
+  .file-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 140px;
+    height: 180px; /* 卡片高度像书架 */
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .file-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .file-icon img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .file-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .file-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+    text-align: center;
+  }
+  .back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+  .download-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .download-button:hover {
+    background-color: #0056b3;
+  }
+  </style>
+  

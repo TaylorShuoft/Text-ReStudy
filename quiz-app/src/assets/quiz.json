@@ -1,225 +1,547 @@
 {
     "数据分析": {
         "单选题": [
-            {
-                "id": 1,
-                "text": "下列选项中，用于实现数据可视化功能的库是：",
-                "options": ["NumPy", "pandas", "Matplotlib", "NLTK"],
-                "answer": "Matplotlib",
-                "explanation": "Matplotlib 是 Python 中常用的数据可视化库。"
-            },
-            {
-                "id": 2,
-                "text": "下列选项中，用来表示数组维度元组的属性是：",
-                "options": ["ndim", "shape", "size", "dtype"],
-                "answer": "shape",
-                "explanation": "shape 属性返回数组的维度元组。"
-            },
-            {
-                "id": 3,
-                "text": "在 pandas 中，以下哪个方法可以删除缺失值？",
-                "options": ["isnull()", "dropna()", "notnull()", "fillna()"],
-                "answer": "dropna()",
-                "explanation": "dropna() 方法用于删除缺失值所在的行或列。"
-            },
-            {
-                "id": 4,
-                "text": "在 Matplotlib 中，哪个函数用于绘制折线图？",
-                "options": ["plot()", "bar()", "hist()", "show()"],
-                "answer": "plot()",
-                "explanation": "plot() 函数用于绘制折线图。"
-            },
-            {
-                "id": 5,
-                "text": "以下关于 pandas 的描述错误的是：",
-                "options": [
-                    "Series 是一维数据结构",
-                    "DataFrame 是二维数据结构",
-                    "Series 既有行索引又有列索引",
-                    "DataFrame 可以通过 loc 和 iloc 索引数据"
-                ],
-                "answer": "Series 既有行索引又有列索引",
-                "explanation": "Series 只有行索引，没有列索引。"
-            },
-            {
-                "id": 6,
-                "text": "NumPy 中用于创建单位矩阵的方法是：",
-                "options": ["eye()", "ones()", "zeros()", "identity()"],
-                "answer": "eye()",
-                "explanation": "eye() 方法用于生成单位矩阵。"
-            },
-            {
-                "id": 7,
-                "text": "在 pandas 中，以下哪个方法用于按列进行分组？",
-                "options": ["groupby()", "merge()", "pivot()", "join()"],
-                "answer": "groupby()",
-                "explanation": "groupby() 方法可以根据某列值对数据进行分组。"
-            },
-            {
-                "id": 8,
-                "text": "以下选项中，哪个方法用于重新设置索引？",
-                "options": ["reset_index()", "set_index()", "sort_index()", "index()"],
-                "answer": "reset_index()",
-                "explanation": "reset_index() 方法用于将索引重置为默认整数索引。"
-            },
-            {
-                "id": 9,
-                "text": "以下选项中，用于连接两个 DataFrame 的方法是：",
-                "options": ["concat()", "merge()", "join()", "append()"],
-                "answer": "concat()",
-                "explanation": "concat() 方法用于沿轴连接多个 DataFrame。"
-            },
-            {
-                "id": 10,
-                "text": "以下哪个模块用于科学计算？",
-                "options": ["NumPy", "pandas", "os", "sys"],
-                "answer": "NumPy",
-                "explanation": "NumPy 是 Python 的科学计算基础库。"
-            }
+    {
+      "id": 1,
+      "text": "下列选项中，用于实现数据可视化功能的库是（ ）。",
+      "options": ["NumPy", "pandas", "Matplotlib", "NLTK"],
+      "answer": "Matplotlib"
+    },
+    {
+      "id": 2,
+      "text": "下列选项中，用来表示数组维度元组的属性是（ ）。",
+      "options": ["ndim", "shape", "size", "dtype"],
+      "answer": "shape"
+    },
+    {
+      "id": 3,
+      "text": "下列关于Series和DataFrame的描述，错误的是（ ）。",
+      "options": [
+        "Series是一维的数据结构",
+        "DataFrame是二维的数据结构",
+        "Series既有行索引又有列索",
+        "Series和DataFrame都可以重置索引"
+      ],
+      "answer": "Series既有行索引又有列索"
+    },
+    {
+      "id": 4,
+      "text": "下列选项中，可以删除缺失值的是（ ）。",
+      "options": ["isnull()", "dropna()", "notnull()", "fillna()"],
+      "answer": "dropna()"
+    },
+    {
+      "id": 5,
+      "text": "在Matplotlib中，用于展示图表的函数是（ ）。",
+      "options": ["plot()", "bar()", "hist()", "show()"],
+      "answer": "show()"
+    },
+    {
+      "id": 6,
+      "text": "下列选项中，说法错误的是。（ ）",
+      "options": [
+        "distplot()函数用于绘制直方图和核密度估计曲线",
+        "distplot()函数默认不使用密度观察条",
+        "stripplot()函数用于绘制直方图",
+        "swarmplot()函数用于绘制数据点不重叠的散点图"
+      ],
+      "answer": "stripplot()函数用于绘制直方图"
+    }
+    ,{
+        "id": 7,
+        "text": "下列选项中，用来表示数组维度元组的属性是（ ）。",
+        "options": ["ndim", "shape", "size", "dtype"],
+        "answer": "shape"
+      },
+      {
+        "id": 8,
+        "text": "下面选项中，创建的是3行3列数组的是（ ）。",
+        "options": [
+          "arr = np.array([1, 2, 3])",
+          "arr = np.array([[1, 2, 3], [4, 5, 6]])",
+          "arr = np.array([[1, 2], [3, 4]])",
+          "np.ones((3, 3))"
         ],
-        "判断题": [
-            {
-                "id": 1,
-                "text": "DataFrame 是 pandas 中的二维数据结构。",
-                "options": ["对", "错"],
-                "answer": "对",
-                "explanation": "DataFrame 是 pandas 中类似于表格的二维数据结构。"
-            },
-            {
-                "id": 2,
-                "text": "在 pandas 中，isnull() 方法用于检查缺失值。",
-                "options": ["对", "错"],
-                "answer": "对",
-                "explanation": "isnull() 方法用于检测缺失值，并返回布尔值。"
-            },
-            {
-                "id": 3,
-                "text": "Series 和 DataFrame 都可以使用 loc 方法进行数据选择。",
-                "options": ["对", "错"],
-                "answer": "对",
-                "explanation": "loc 方法适用于 pandas 的 Series 和 DataFrame。"
-            },
-            {
-                "id": 4,
-                "text": "pandas 可以直接处理 SQL 数据库的表。",
-                "options": ["对", "错"],
-                "answer": "对",
-                "explanation": "pandas 提供了与 SQL 数据库的集成方法，可以直接读取或写入表。"
-            },
-            {
-                "id": 5,
-                "text": "NumPy 的 array 对象支持不同数据类型的混合存储。",
-                "options": ["对", "错"],
-                "answer": "错",
-                "explanation": "NumPy 的数组只能存储相同类型的数据。"
-            },
-            {
-                "id": 6,
-                "text": "fillna() 方法可以替换缺失值。",
-                "options": ["对", "错"],
-                "answer": "对",
-                "explanation": "fillna() 方法可以用指定的值替换缺失值。"
-            },
-            {
-                "id": 7,
-                "text": "在 Matplotlib 中，bar() 函数用于绘制柱状图。",
-                "options": ["对", "错"],
-                "answer": "对",
-                "explanation": "bar() 函数是 Matplotlib 的柱状图绘制方法。"
-            },
-            {
-                "id": 8,
-                "text": "NumPy 支持多维数组的运算。",
-                "options": ["对", "错"],
-                "answer": "对",
-                "explanation": "NumPy 是多维数组计算的核心库。"
-            },
-            {
-                "id": 9,
-                "text": "pandas 的 pivot() 方法可以将列转换为行索引。",
-                "options": ["对", "错"],
-                "answer": "对",
-                "explanation": "pivot() 方法可以将 DataFrame 的列转换为行索引。"
-            },
-            {
-                "id": 10,
-                "text": "在 pandas 中，Series 没有列索引。",
-                "options": ["对", "错"],
-                "answer": "对",
-                "explanation": "Series 是一维数据结构，仅有行索引。"
-            }
+        "answer": "np.ones((3, 3))"
+      },
+      {
+        "id": 9,
+        "text": "请阅读下面一段程序：\n\narr_2d = np.array([[11, 20, 13],[14, 25, 16],[27, 18, 9]])\n\nprint(arr_2d[1, :1])\n\n执行上述程序后，最终输出的结果为（ ）。",
+        "options": ["[14]", "[25]", "[14, 25]", "[20, 25]"],
+        "answer": "[14]"
+      },
+      {
+        "id": 10,
+        "text": "请阅读下面一段程序：\n\narr = np.arange(6).reshape(1, 2, 3)\n\nprint(arr.transpose(2, 0, 1))\n\n执行上述程序后，最终输出的结果为（ ）。",
+        "options": [
+          "[[[2 5]] [[0 3]] [[1 4]]]",
+          "[[[1 4]] [[0 3]] [[2 5]]]",
+          "[[[0 3]] [[1 4]] [[2 5]]]",
+          "[[[0] [3]] [[1] [4]] [[2] [5]]]"
         ],
+        "answer": "[[[0 3]] [[1 4]] [[2 5]]]"
+      },
+      {
+        "id": 11,
+        "text": "下列选项中，用于表示矢量化三元表达式的是（ ）。",
+        "options": ["where()", "cumsum()", "sort()", "unique()"],
+        "answer": "where()"
+      },
+      {
+        "id": 12,
+        "text": "在Matplotlib中，用于展示图表的函数是（ ）。",
+        "options": ["plot()", "bar()", "hist()", "show()"],
+        "answer": "show()"
+      },
+      {
+        "id": 13,
+        "text": "下列选项中，关于Pyecharts库的描述正确的是（ ）。",
+        "options": [
+          "Pyecharts库生成图表不能与用户交互",
+          "Pyecharts库无需安装便可以直接使用",
+          "Pyecharts库是基于Seaborn进行封装的",
+          "Pyecharts库可以绘制柱形图"
+        ],
+        "answer": "Pyecharts库可以绘制柱形图"
+      },
+      {
+        "id": 14,
+        "text": "下列选项中，说法错误的是。（ ）",
+        "options": [
+          "distplot()函数用于绘制直方图和核密度估计曲线",
+          "distplot()函数默认不使用密度观察条",
+          "stripplot()函数用于绘制直方图",
+          "swarmplot()函数用于绘制数据点不重叠的散点图"
+        ],
+        "answer": "stripplot()函数用于绘制直方图"
+      },
+      {
+        "id": 15,
+        "text": "在Matplotlib中，用于给图表添加标题的函数是（ ）。",
+        "options": ["xlabel()", "title()", "legend()", "text()"],
+        "answer": "title()"
+      },
+      {
+        "id": 16,
+        "text": "下列选项中，关于图表的描述错误的是（ ）。",
+        "options": [
+          "气泡图用于展示三个变量之间的关系",
+          "核密度曲线图通过线段的倾斜程度显示数据的变化情况",
+          "饼图显示一个数据序列中的各项的大小与各项总和的比例",
+          "柱形图使用矩形条的高度反映不同分类数据之间的差异情况"
+        ],
+        "answer": "核密度曲线图通过线段的倾斜程度显示数据的变化情况"
+      },
+      {
+        "id": 17,
+        "text": "Jupyter Notebook不具备的功能是（ ）。",
+        "options": [
+          "Jupyter Notebook可以直接生成一份交互式文档",
+          "Jupyter Notebook可以安装Python库",
+          "Jupyter Notebook可以导出HTML文件",
+          "Jupyter Notebook可以将文件分享给他人"
+        ],
+        "answer": "Jupyter Notebook可以安装Python库"
+      },
+      {
+        "id": 18,
+        "text": "关于数据分析的说法，下列描述错误的是（ ）。",
+        "options": [
+          "数据分析可以通过计算机工具和数学知识处理数据",
+          "可以做出具有针对性的决策",
+          "数据分析没有实际的使用意义",
+          "在大数据环境下，数据分析能够挖掘出更有价值的信息"
+        ],
+        "answer": "数据分析没有实际的使用意义"
+      },
+      {
+        "id": 19,
+        "text": "下列关于数据分析概念的描述错误的是（ ）。",
+        "options": [
+          "使用适当的统计分析方法对收集来的大量数据进行分析",
+          "数据分析可以从数据中提炼出有用的信息并形成结论",
+          "数据分析可以对数据进行更深层的研究",
+          "数据分析不能够在杂乱无章的数据中提取有用的数据"
+        ],
+        "answer": "数据分析不能够在杂乱无章的数据中提取有用的数据"
+      },{
+        "id": 20,
+        "text": "下列关于Jupyter Notebook的描述错误的是（  ）。",
+        "options": [
+          "Jupyter Notebook有两种模式",
+          "Jupyter Notebook有两种单元形式",
+          "Jupyter Notebook Markdown无法使用LaTeX语法",
+          "Jupyter Notebook仅仅支持Python语言"
+        ],
+        "answer": ["Jupyter Notebook Markdown无法使用LaTeX语法", "Jupyter Notebook仅仅支持Python语言"]
+      },{
+        "id": 21,
+        "text": "下列选项中，属于数据处理的目的是（ ）。",
+        "options": [
+          "使数据更加适用于分析",
+          "对无意义的数据进行清洗",
+          "整合数据",
+          "提高数据质量"
+        ],
+        "answer": ["使数据更加适用于分析", "对无意义的数据进行清洗", "整合数据", "提高数据质量"]
+      },{
+        "id": 22,
+        "text": "下列关于Python数据分析库的描述错误的是（ ）。",
+        "options": [
+          "NumPy的在线安装不需要其它任何辅助工具",
+          "SciPy的主要功能是可视化图表",
+          "pandas能够实现数据的整理工作",
+          "scikit-learn包含所有算法"
+        ],
+        "answer": ["NumPy的在线安装不需要其它任何辅助工具", "SciPy的主要功能是可视化图表", "scikit-learn包含所有算法"]
+      }
+      
+      
+  ],
+      "判断题": [
+    {
+        "id": 1,
+        "type": "判断题",
+        "text": "如果要卸载指定环境中的包，则可以直接使用conda remove命令移除。",
+        "options": ["对", "错"],
+        "answer": "对"
+    },
+    {
+        "id": 2,
+        "type": "判断题",
+        "text": "若使用ones()函数创建数组时没有指明元素的数据类型，默认数据类型为float64。",
+        "options": ["对", "错"],
+        "answer": "对"
+    },
+    {
+        "id": 3,
+        "type": "判断题",
+        "text": "DataFrame的每列数据可以看作一个Series类的对象。",
+        "options": ["对", "错"],
+        "answer": "对"
+    },
+    {
+        "id": 4,
+        "type": "判断题",
+        "text": "Matplotlib默认支持中文显示。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 5,
+        "type": "判断题",
+        "text": "3σ原则只适用于符合或近似正态分布的数据集。",
+        "options": ["对", "错"],
+        "answer": "对"
+    },
+    {
+        "id": 6,
+        "type": "判断题",
+        "text": "直方图与柱形图没有任何区别。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 7,
+        "type": "判断题",
+        "text": "饼图在识别异常值方面有一定的优越性。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 8,
+        "type": "判断题",
+        "text": "停用词表中可以随意添加任何词。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 9,
+        "type": "判断题",
+        "text": "当使用stack()方法将有分层索引的DataFrame进行重塑操作后，一定会返回一个Series类的对象。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 10,
+        "type": "判断题",
+        "text": "假设数据集有10行数据，说明它里面有10个样本。",
+        "options": ["对", "错"],
+        "answer": "对"
+    },
+    {
+        "id": 11,
+        "type": "判断题",
+        "text": "特征是机器学习最终要预测的结果。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 12,
+        "type": "判断题",
+        "text": "KNeighborsClassifier类封装了线性回归的相关功能。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 13,
+        "type": "判断题",
+        "text": "为了消除评价指标之间的量纲影响，需要对数据进行归一化处理。",
+        "options": ["对", "错"],
+        "answer": "对"
+    },
+    {
+        "id": 14,
+        "type": "判断题",
+        "text": "超参数的值默认是最好的，无需进行调参处理。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 15,
+        "type": "判断题",
+        "text": "通过empty()函数创建的数组，该数组中没有任何的元素。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 16,
+        "type": "判断题",
+        "text": "若使用ones()函数创建数组时没有明确地指明元素的数据类型，则默认数据类型为float64。",
+        "options": ["对", "错"],
+        "answer": "对"
+    },
+    {
+        "id": 17,
+        "type": "判断题",
+        "text": "数组之间的任何算术运算都会将运算应用到数组的每个元素上。",
+        "options": ["对", "错"],
+        "answer": "对"
+    },
+    {
+        "id": 18,
+        "type": "判断题",
+        "text": "NumPy 中，可以混合使用切片与整数索引来获取二维数组的元素。",
+        "options": ["对", "错"],
+        "answer": "对"
+    },
+    {
+        "id": 19,
+        "type": "判断题",
+        "text": "当通过布尔索引操作数组时，返回的数据是布尔数组中False对应位置的值。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 20,
+        "type": "判断题",
+        "text": "Seaborn是基于Matplotlib的绘图库。",
+        "options": ["对", "错"],
+        "answer": "对"
+    },
+    {
+        "id": 21,
+        "type": "判断题",
+        "text": "直方图与柱形图没有任何区别。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 22,
+        "type": "判断题",
+        "text": "饼图在识别异常值方面有一定的优越性。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 23,
+        "type": "判断题",
+        "text": "Matplotlib默认支持中文显示。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 24,
+        "type": "判断题",
+        "text": "Matplotlib不能绘制2D图表。",
+        "options": ["对", "错"],
+        "answer": "错"
+    },
+    {
+        "id": 25,
+        "type": "判断题",
+        "text": "Python是一门胶水语言，可以轻松地操作其它语言编写的库。",
+        "options": ["对", "错"],
+        "answer": "对"
+    },
+    {
+        "id": 26,
+        "type": "判断题",
+        "text": "数据分析是一个有目的地收集和整合数据的过程。",
+        "options": ["对", "错"],
+        "answer": "错"
+    }
+]
+
+
+          ,
         "填空题": [
-            {
-                "id": 1,
-                "text": "Python 中用于生成随机数的模块是 ______。",
-                "options": ["random", "math", "os", "sys"],
-                "answer": "random",
-                "explanation": "random 模块提供了生成随机数的功能。"
-            },
-            {
-                "id": 2,
-                "text": "pandas 中表示缺失值的通用标记是 ______。",
-                "options": ["NaN", "None", "null", "nan"],
-                "answer": "NaN",
-                "explanation": "NaN 是 pandas 中用于表示缺失值的通用标记。"
-            },
-            {
-                "id": 3,
-                "text": "DataFrame 的列索引可以通过 ______ 方法设置。",
-                "options": ["set_index", "reset_index", "sort_index", "index"],
-                "answer": "set_index",
-                "explanation": "set_index 方法可以用来设置 DataFrame 的列索引。"
-            },
-            {
-                "id": 4,
-                "text": "NumPy 中用于创建全零数组的方法是 ______。",
-                "options": ["zeros", "ones", "full", "empty"],
-                "answer": "zeros",
-                "explanation": "zeros 方法可以创建一个全零数组。"
-            },
-            {
-                "id": 5,
-                "text": "pandas 中用于按某列值分组的方法是 ______。",
-                "options": ["groupby", "concat", "merge", "join"],
-                "answer": "groupby",
-                "explanation": "groupby 方法用于按列值分组。"
-            },
-            {
-                "id": 6,
-                "text": "Matplotlib 中用于显示图表的函数是 ______。",
-                "options": ["show", "plot", "scatter", "bar"],
-                "answer": "show",
-                "explanation": "show 方法用于显示图表。"
-            },
-            {
-                "id": 7,
-                "text": "NumPy 中计算数组均值的方法是 ______。",
-                "options": ["mean", "sum", "median", "std"],
-                "answer": "mean",
-                "explanation": "mean 方法用于计算数组的均值。"
-            },
-            {
-                "id": 8,
-                "text": "在 pandas 中，______ 方法可以将 DataFrame 的列转换为行索引。",
-                "options": ["pivot", "groupby", "merge", "join"],
-                "answer": "pivot",
-                "explanation": "pivot 方法可以将列转换为行索引。"
-            },
-            {
-                "id": 9,
-                "text": "NumPy 中创建对角矩阵的方法是 ______。",
-                "options": ["diag", "eye", "zeros", "ones"],
-                "answer": "diag",
-                "explanation": "diag 方法用于创建对角矩阵。"
-            },
-            {
-                "id": 10,
-                "text": "在 pandas 中，______ 方法可以对 DataFrame 的索引进行排序。",
-                "options": ["sort_index", "sort_values", "groupby", "merge"],
-                "answer": "sort_index",
-                "explanation": "sort_index 方法可以对索引进行排序。"
-            }
-        ]
+    {
+        "id": 1,
+        "type": "填空题",
+        "text": "分析下列程序的输出结果是                 。\n\nimport numpy as np\n\narr_2d = np.array([[11, 20, 13],[14, 25, 16],[27, 18, 9]])\n\nprint(arr_2d[1, :1])",
+        "options": ["[[14]]", "[20, 14]", "[14]"],
+        "answer": "[14]"
+    },
+    {
+        "id": 2,
+        "type": "填空题",
+        "text": "分析下列程序的输出结果是                 。\n\nimport numpy as np\nimport pandas as pd\n\nser_obj = pd.Series([4, np.nan, 6, 5, -3, 2])\n\nser_obj.sort_values()",
+        "options": ["1", "6", "-3 2 4 5 6"],
+        "answer": "-3 2 4 5 6"
+    },
+    {
+        "id": 3,
+        "type": "填空题",
+        "text": "分析下列程序的输出结果是                 。\n\nfrom scipy.linalg import  *\nimport numpy as np\n\nA=np.matrix('[1,2;3,4]')\n\nprint(A.T)",
+        "options": ["[[1 3]\n[2 4]]", "[[3 1]\n[4 2]]", "无输出"],
+        "answer": "[[1 3]\n[2 4]]"
+    },
+    {
+        "id": 4,
+        "type": "填空题",
+        "text": "分析下列程序的输出结果是                 。\n\nimport jieba\n\nsentence = '人生苦短，我用Pyhton'\n\nterms_list = jieba.cut(sentence, cut_all=True)\n\nprint(' '.join(terms_list))",
+        "options": ["人生 苦短 ， 我 用 Pyhton", "人生苦短，我用Pyhton", "Pyhton 我 用"],
+        "answer": "人生 苦短 ， 我 用 Pyhton"
+    },
+    {
+        "id": 5,
+        "type": "填空题",
+        "text": "pandas中缺失值一般使用None或np.nan表示，统一标记为________。",
+        "options": ["NaN", "null", "None"],
+        "answer": "NaN"
+    },
+    {
+        "id": 6,
+        "type": "填空题",
+        "text": "________ ()方法用于将DataFrame的列索引旋转为行索引。",
+        "options": ["pivot()", "pivot_table()", "melt()"],
+        "answer": "pivot()"
+    },
+    {
+        "id": 7,
+        "type": "填空题",
+        "text": "________是指数据集中的个别值明显偏离它所属数据集的其余值。",
+        "options": ["异常值", "离散值", "偏差值"],
+        "answer": "异常值"
+    },
+    {
+        "id": 8,
+        "type": "填空题",
+        "text": "from pandas import Series\n\nimport pandas as pd\n\nfrom numpy import NaN\n\nseries_obj = Series([None, 4, NaN])\n\npd.isnull(series_obj)\n\n执行上述程序后，最终输出的结果为（ ）。",
+        "options": ["0     True\n1     False\n2     True", "0 False 1 True 2 False", "无输出"],
+        "answer": "0     True\n1     False\n2     True"
+    },
+    {
+        "id": 9,
+        "type": "填空题",
+        "text": "由一系列高度不等的矩形条或线段组成，用于反映数据的分布和波动情况。",
+        "options": ["直方图", "柱形图", "散点图"],
+        "answer": "直方图"
+    },
+    {
+        "id": 10,
+        "type": "填空题",
+        "text": "Matplotlib的        模块封装了快速绘制图表的函数。",
+        "options": ["pyplot", "plotly", "sns"],
+        "answer": "pyplot"
+    }, {
+        "id": 11,
+        "type": "填空题",
+        "text": "在下列程序中填写代码。\n\nimport numpy as np\n\nimport pandas as pd\n\nimport matplotlib.pyplot as plt\n\nfig,subs=plt.subplots(2,2)\n\nx=np.arange(1,100)\n\nsubs[0][0].    (x,x*x)     # 第1个图：折线图\n\nsubs[0][1].       (np.arange(0,10), np.random.rand(10)) # 第2个图：散点图\n\nplt.show()",
+        "options": ["plot;scatter", "line;scatter", "plot;line"],
+        "answer": "plot;scatter"
+    },
+    {
+        "id": 12,
+        "type": "填空题",
+        "text": "在下列程序中填写代码。\n\nimport pandas as pd\n\nimport numpy as np\n\n# 对生成的四列随机数的数据类型绘制条形图\n\ndf1= pd.             (np.random.rand(10,4),columns=['a','b','c','d'])\n\ndf1.                 ",
+        "options": ["DataFrame;plot.bar()", "DataFrame;bar.plot()", "Data;plot.bar()"],
+        "answer": "DataFrame;plot.bar()"
+    },
+    {
+        "id": 13,
+        "type": "填空题",
+        "text": "from sklearn.datasets import load_iris     #加载数据集\n\niris=load_iris()\n\nn_samples,n_features= iris.data.shape\n\nprint(        )   #(150, 4)  表示为150个样本，4个特征\n\nprint(iris.target.shape)   #(150,)\n\nprint('特征值的名字:\\n',        )   #特征名称\n\nprint('鸢尾花的数据集描述:\\n',iris['DESCR'])    #数据描述",
+        "options": ["iris.data.shape;iris.feature_names", "iris.shape;iris.names", "iris.data.shape;iris.feature_list"],
+        "answer": "iris.data.shape;iris.feature_names"
+    },
+    {
+        "id": 14,
+        "type": "填空题",
+        "text": "import numpy as np\n\nimport matplotlib.pyplot as plt\n\nimport seaborn as sns\n\n# 生成100个成标准正态分布的随机数\n\nx = np.random.        (size=100)\n\n# kde=True，进行核密度估计\n\nsns.       (x,kde=True)  #密度曲线KDE\n\nplt.show()",
+        "options": ["normal;distplot", "rand;histplot", "normal;kdeplot"],
+        "answer": "normal;distplot"
+    },
+    {
+        "id": 15,
+        "type": "填空题",
+        "text": "词形归一化包括词干提取和________，它们会将派生词转化为基本形式。",
+        "options": ["词形还原", "词干化", "归一化"],
+        "answer": "词形还原"
+    },
+    {
+        "id": 16,
+        "type": "填空题",
+        "text": "________是指为单词标注一个正确的词性。",
+        "options": ["词性标注", "词义标注", "语义标注"],
+        "answer": "词性标注"
+    },
+    {
+        "id": 17,
+        "type": "填空题",
+        "text": "________是在处理自然语言文本之前或之后会自动过滤掉的没有具体意义的字或词。",
+        "options": ["停用词", "无意义词", "过滤词"],
+        "answer": "停用词"
+    },
+    {
+        "id": 18,
+        "type": "填空题",
+        "text": "________研究的是计算机怎么模拟或实现人类的学习行为。",
+        "options": ["机器学习", "深度学习", "人工智能"],
+        "answer": "机器学习"
+    },
+    {
+        "id": 19,
+        "type": "填空题",
+        "text": "数据集的每一行数据称为一个________。",
+        "options": ["样本", "特征", "变量"],
+        "answer": "样本"
+    },
+    {
+        "id": 20,
+        "type": "填空题",
+        "text": "________是利用一组已知类别的样本作为训练集，调整分类器的参数，使其达到所要求性能的过程。",
+        "options": ["监督学习", "无监督学习", "分类学习"],
+        "answer": "监督学习"
+    },{
+        "id": 21,
+        "type": "填空题",
+        "text": "数据分析是指使用适当的【】对收集来的大量数据进行分析，从中提取有用信息和形成结论，并加以详细研究和概括总结的过程。",
+        "options": ["统计分析方法", "数理统计方法", "数据挖掘方法"],
+        "answer": "统计分析方法"
+      },
+      {
+        "id": 22,
+        "type": "填空题",
+        "text": "在统计学领域，数据分析可以划分为【】、【】和【】。",
+        "options": [
+          "描述性分析, 推断性分析, 因果性分析",
+          "因果分析, 预测分析, 数据清洗",
+          "数据探索, 相关性分析, 数据建模"
+        ],
+        "answer": "描述性分析, 推断性分析, 因果性分析"
+      }
+]
     }
 }
