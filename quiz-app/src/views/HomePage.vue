@@ -50,6 +50,18 @@
     <div v-else class="desktop-warning">
       <h1>请用手机打开本页面</h1>
     </div>
+
+    <!-- 更新日志 -->
+    <div v-if="!showSubjects && !isSubjectSelected" class="update-log">
+      <div class="update-log-header">
+        <h2>更新日志</h2>
+      </div>
+      <ul>
+        <li v-for="(update, index) in updateLogs" :key="index">
+          {{ update.date }} - {{ update.description }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -65,6 +77,13 @@ export default {
       isSubjectSelected: false, // 是否已经选择了科目
       selectedSubject: "", // 已选择的科目
       isMobile: false, // 判断是否为手机端
+      updateLogs: [
+        { date: '2024-12-24', description: '修复了答题选项显示问题' },
+        { date: '2024-12-25', description: '上传科目"数据分析"的完整资料' },
+        { date: '2024-12-26', description: '修复了连续点击后跳题的bug' },
+        // 可以继续添加更多的更新日志
+      ],
+      showUpdateLog: true, // 控制更新日志的显示
     };
   },
   created() {
@@ -88,6 +107,7 @@ export default {
       this.selectedSubject = subject; // 保存选择的科目
       this.isSubjectSelected = true; // 标记科目已选择
       this.showSubjects = false; // 隐藏科目选择界面
+      this.showUpdateLog = false; // 隐藏更新日志
     },
     startQuiz() {
       // 跳转到刷题页面，并传递选择的科目
@@ -149,7 +169,7 @@ export default {
 .start-button {
   background-color: #007bff;
   color: white;
-  padding: 10px 20px;
+  padding: 20px 40px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -164,7 +184,7 @@ export default {
 .download-button {
   background-color: #ff9800;
   color: white;
-  padding: 10px 20px;
+  padding: 20px 40px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -186,5 +206,39 @@ export default {
 p {
   font-size: 16px;
   margin-bottom: 20px;
+}
+
+.update-log {
+  margin-top: 40px;
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #e8f5e9;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.update-log-header {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+.update-log-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.update-log ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.update-log li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <div class="quiz">
     <!-- 左上角返回按钮 -->
-    <div class="blurred-content" :class="{ blurred: isBlurred }">
-      <button class="back-button" @click="goHome">返回首页</button>
+    <button class="back-button" @click="goHome">返回首页</button>
 
+    <div class="blurred-content" :class="{ blurred: isBlurred }">
       <!-- 当前题目 -->
       <h1>{{ subject }}答题页</h1>
 
@@ -81,6 +81,7 @@ export default {
       showCorrectAnswer: false, // 是否显示正确答案
       answers: [], // 答题状态数组：'correct', 'incorrect', 'unanswered'
       isBlurred: false, // 是否虚化页面
+      isAnsweringDisabled: false, // 是否禁用作答
     };
   },
   computed: {
@@ -136,17 +137,25 @@ export default {
       this.$router.push("/"); // 返回首页
     },
     selectAnswer(option) {
+      if (this.isAnsweringDisabled) return; // 如果作答被禁用，则直接返回
+      if (this.isBlurred) return;
+
       this.selectedAnswer = option;
       this.isCorrect = option === this.currentQuestion.answer;
       if (this.isCorrect) {
         this.answers[this.currentQuestionIndex] = "correct";
+        this.isAnsweringDisabled = true;
         setTimeout(() => {
+          this.isAnsweringDisabled = false;
           this.nextQuestion();
         }, 500);
       } else {
         this.answers[this.currentQuestionIndex] = "incorrect";
         this.showCorrectAnswer = true;
+        this.isAnsweringDisabled = true; // 禁用作答
+
         setTimeout(() => {
+          this.isAnsweringDisabled = false;
           this.nextQuestion();
         }, 2000);
       }
@@ -194,7 +203,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 .quiz {
   padding: 20px;
@@ -217,7 +225,7 @@ export default {
 }
 
 .back-button {
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 10px;
   background-color: #007bff;
@@ -226,10 +234,12 @@ export default {
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
+  filter: none;
 }
 .back-button:hover {
   background-color: #0056b3;
 }
+
 .options-container {
   display: flex;
   align-items: center;

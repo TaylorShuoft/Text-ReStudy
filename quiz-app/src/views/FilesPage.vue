@@ -26,10 +26,8 @@
     data() {
       return {
         files: [
-          { name: "py题.docx", url: "/Files/py题.docx" },
-          { name: "数据分析题.docx", url: "/Files/数据分析题.docx" },
-          { name: "Java考试题.docx", url: "/Files/Java考试题.docx" },
-          { name: "操作系统题.docx", url: "/Files/操作系统题.docx" },
+          { name: "数据分析大题.docx", url: "/Files/数据分析大题.docx" },
+         
         ],
       };
       

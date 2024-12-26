@@ -85,7 +85,7 @@ export default {
   margin-top: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   max-height: 400px; /* 设置最大高度 */
   overflow-y: auto; /* 添加垂直滚动条 */
   text-align: center;
