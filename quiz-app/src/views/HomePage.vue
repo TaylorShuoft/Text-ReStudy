@@ -78,10 +78,10 @@ export default {
       selectedSubject: "", // 已选择的科目
       isMobile: false, // 判断是否为手机端
       updateLogs: [
-        { date: '2024-12-24', description: '修复了答题选项显示问题' },
-        { date: '2024-12-25', description: '上传科目"数据分析"的完整资料' },
-        { date: '2024-12-26', description: '修复了连续点击后跳题的bug' },
-        // 可以继续添加更多的更新日志
+       
+       { date: '2024-12-27', description: '提示！Python选择后三道不管！' },
+        { date: '2024-12-27', description: '更新！加入Java复习资料！' },
+        { date: '2024-12-27', description: '更新！加入Java基础选择题！' },
       ],
       showUpdateLog: true, // 控制更新日志的显示
     };

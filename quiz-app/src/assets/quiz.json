@@ -543,5 +543,355 @@
         "answer": "描述性分析, 推断性分析, 因果性分析"
       }
 ]
-    }
+    }, "Java基础": {
+    "单选题": [
+      {
+        "id": 1,
+        "text": "Java中用来定义类的关键字是（ ）。",
+        "options": ["method", "class", "public", "define"],
+        "answer": "class"
+      },
+      {
+        "id": 2,
+        "text": "下列哪个不是Java的基本数据类型？（ ）",
+        "options": ["int", "float", "string", "boolean"],
+        "answer": "string"
+      },
+      {
+        "id": 3,
+        "text": "Java中用来输出内容到控制台的语句是（ ）。",
+        "options": ["print.out()", "console.log()", "System.out.print()", "echo"],
+        "answer": "System.out.print()"
+      },
+      {
+        "id": 4,
+        "text": "下列哪个标识符是合法的？（ ）",
+        "options": ["1number", "_value", "public", "value!"],
+        "answer": "_value"
+      },
+      {
+        "id": 5,
+        "text": "Java中switch语句可以判断的数据类型是（ ）。",
+        "options": ["byte", "int", "char", "以上全部"],
+        "answer": "以上全部"
+      },
+      {
+        "id": 6,
+        "text": "下列关于数组的描述正确的是（ ）。",
+        "options": ["数组长度可以在运行时修改", "数组的索引从1开始", "数组是对象类型", "数组只能存储基本数据类型"],
+        "answer": "数组是对象类型"
+      },
+      {
+        "id": 7,
+        "text": "下列方法可以用来获取数组的长度是（ ）。",
+        "options": ["length()", "size()", "length", "getLength()"],
+        "answer": "length"
+      },
+      {
+        "id": 8,
+        "text": "在Java中，字符串的长度可以通过哪个方法获取？（ ）",
+        "options": ["size()", "length()", "getLength()", "count()"],
+        "answer": "length()"
+      },
+      {
+        "id": 9,
+        "text": "下列哪个选项用于跳出当前循环？（ ）",
+        "options": ["continue", "break", "return", "exit"],
+        "answer": "break"
+      },
+      {
+        "id": 10,
+        "text": "下列哪个关键字表示一个常量？（ ）",
+        "options": ["final", "const", "static", "volatile"],
+        "answer": "final"
+      },
+      {
+        "id": 11,
+        "text": "Java中的默认整数类型是（ ）。",
+        "options": ["byte", "short", "int", "long"],
+        "answer": "int"
+      },
+      {
+        "id": 12,
+        "text": "Java程序的主方法必须声明为（ ）。",
+        "options": ["public main()", "public void main(String[] args)", "private static main(String[] args)", "void static main(String[] args)"],
+        "answer": "public void main(String[] args)"
+      },
+      {
+        "id": 13,
+        "text": "Java中的++操作符是（ ）。",
+        "options": ["后缀形式时，先返回值后自增", "后缀形式时，先自增后返回值", "无法对整型变量使用", "同前缀形式效果相同"],
+        "answer": "后缀形式时，先返回值后自增"
+      },
+      {
+        "id": 14,
+        "text": "下列哪个不是Java中的访问修饰符？（ ）",
+        "options": ["private", "public", "default", "protected"],
+        "answer": "default"
+      },
+      {
+        "id": 15,
+        "text": "Java中可以嵌套使用if-else语句的最大层数是（ ）。",
+        "options": ["3", "10", "无限制", "1"],
+        "answer": "无限制"
+      },
+      {
+        "id": 16,
+        "text": "下列选项中，不是Java保留关键字的是（ ）。",
+        "options": ["this", "goto", "static", "throw"],
+        "answer": "goto"
+      },
+      {
+        "id": 17,
+        "text": "下面哪种数据类型不能直接转换为String类型？（ ）",
+        "options": ["int", "char", "boolean", "float"],
+        "answer": "boolean"
+      },
+      {
+        "id": 18,
+        "text": "Java中可以表示单个字符的类型是（ ）。",
+        "options": ["String", "char", "text", "word"],
+        "answer": "char"
+      },
+      {
+        "id": 19,
+        "text": "Java中的“==”操作符用于（ ）。",
+        "options": ["比较引用地址", "比较两个变量是否相等", "比较变量和常量的类型", "进行逻辑非操作"],
+        "answer": "比较两个变量是否相等"
+      },
+      {
+        "id": 20,
+        "text": "下列方法中哪个是正确的Main方法签名？（ ）",
+        "options": ["private static void main(String args[])", "public static void Main(String args[])", "public static void main(String[] args)", "public static void main(int[] args)"],
+        "answer": "public static void main(String[] args)"
+      },
+      {
+        "id": 21,
+        "text": "在Java中，一个类可以直接继承几个类？（ ）",
+        "options": ["1", "2", "无限制", "0"],
+        "answer": "1"
+      },
+      {
+        "id": 22,
+        "text": "下列哪个关键字用来创建对象？（ ）",
+        "options": ["static", "new", "create", "init"],
+        "answer": "new"
+      },
+      {
+        "id": 23,
+        "text": "面向对象的三大基本特性是（ ）。",
+        "options": ["继承、重载、多态", "封装、继承、多态", "封装、继承、重写", "封装、重载、多态"],
+        "answer": "封装、继承、多态"
+      },
+      {
+        "id": 24,
+        "text": "方法的重载是指（ ）。",
+        "options": ["方法名相同，参数列表不同", "方法名不同，参数列表相同", "返回类型相同", "方法作用域不同"],
+        "answer": "方法名相同，参数列表不同"
+      },
+      {
+        "id": 25,
+        "text": "子类覆盖父类方法时，使用的关键字是（ ）。",
+        "options": ["new", "override", "@Override", "overload"],
+        "answer": "@Override"
+      },
+      {
+        "id": 26,
+        "text": "使用继承的关键字是（ ）。",
+        "options": ["extends", "implement", "parent", "super"],
+        "answer": "extends"
+      },
+      {
+        "id": 27,
+        "text": "Java中用于表示一个类的实例的关键字是（ ）。",
+        "options": ["this", "super", "class", "object"],
+        "answer": "this"
+      },
+      {
+        "id": 28,
+        "text": "构造方法的作用是（ ）。",
+        "options": ["初始化对象", "分配内存空间", "创建类", "执行继承"],
+        "answer": "初始化对象"
+      },
+      {
+        "id": 29,
+        "text": "如果一个类中包含抽象方法，该类必须是（ ）。",
+        "options": ["抽象类", "普通类", "包含static方法", "接口"],
+        "answer": "抽象类"
+      },
+      {
+        "id": 30,
+        "text": "Java中类与对象的关系是（ ）。",
+        "options": ["类是对象的模板", "对象是类的模板", "二者没有关系", "类是用来执行的"],
+        "answer": "类是对象的模板"
+      },      {
+        "id": 31,
+        "text": "在Java中，接口可以多继承吗？（ ）",
+        "options": ["是", "否", "取决于实现类", "无法判断"],
+        "answer": "是"
+      },
+      {
+        "id": 32,
+        "text": "Java中的构造方法是否可以被继承？（ ）",
+        "options": ["可以", "不可以", "需要用super关键字", "无意义"],
+        "answer": "不可以"
+      },
+      {
+        "id": 33,
+        "text": "在子类中调用父类的构造方法时，应使用哪个关键字？（ ）",
+        "options": ["this", "super", "parent", "extends"],
+        "answer": "super"
+      },
+      {
+        "id": 34,
+        "text": "以下选项中，哪个不是多态的表现形式？（ ）",
+        "options": ["方法重载", "方法覆盖", "抽象类", "变量重载"],
+        "answer": "变量重载"
+      },
+      {
+        "id": 35,
+        "text": "下列关于抽象类的描述，错误的是（ ）。",
+        "options": ["抽象类可以包含具体方法", "抽象类不能被实例化", "抽象类中的抽象方法必须由子类实现", "抽象类只能继承一个接口"],
+        "answer": "抽象类只能继承一个接口"
+      },
+      {
+        "id": 36,
+        "text": "在Java中，一个类最多可以实现几个接口？（ ）",
+        "options": ["1", "2", "多个", "0"],
+        "answer": "多个"
+      },
+      {
+        "id": 37,
+        "text": "哪个关键字可以阻止类被继承？（ ）",
+        "options": ["static", "final", "abstract", "protected"],
+        "answer": "final"
+      },
+      {
+        "id": 38,
+        "text": "下列关于静态变量的描述正确的是（ ）。",
+        "options": ["静态变量是属于对象的", "静态变量是属于类的", "静态变量可以多次初始化", "静态变量与对象无关"],
+        "answer": "静态变量是属于类的"
+      },
+      {
+        "id": 39,
+        "text": "在接口中，默认方法的定义需要用哪个关键字？（ ）",
+        "options": ["static", "default", "abstract", "final"],
+        "answer": "default"
+      },
+      {
+        "id": 40,
+        "text": "Java中抽象类和接口的区别是（ ）。",
+        "options": [
+          "抽象类支持多继承，接口不支持",
+          "接口支持多继承，抽象类不支持",
+          "两者都不支持多继承",
+          "两者都支持多继承"
+        ],
+        "answer": "接口支持多继承，抽象类不支持"
+      },
+      {
+        "id": 41,
+        "text": "在Java中，final关键字修饰的方法是（ ）。",
+        "options": ["可以被重写", "不能被重写", "必须被重写", "与访问修饰符无关"],
+        "answer": "不能被重写"
+      },
+      {
+        "id": 42,
+        "text": "以下关于静态方法的描述正确的是（ ）。",
+        "options": [
+          "静态方法只能访问静态变量",
+          "静态方法可以访问实例变量",
+          "静态方法必须实例化后才能调用",
+          "静态方法可以继承，但不能重写"
+        ],
+        "answer": "静态方法只能访问静态变量"
+      },
+      {
+        "id": 43,
+        "text": "以下关于构造方法的描述正确的是（ ）。",
+        "options": [
+          "构造方法必须有返回值",
+          "构造方法可以有多个重载",
+          "构造方法必须显式定义",
+          "构造方法不支持访问修饰符"
+        ],
+        "answer": "构造方法可以有多个重载"
+      },
+      {
+        "id": 44,
+        "text": "以下关于方法重载的描述正确的是（ ）。",
+        "options": [
+          "方法名相同，参数列表相同",
+          "方法名相同，参数列表不同",
+          "方法名不同，参数列表相同",
+          "方法名和参数列表都不同"
+        ],
+        "answer": "方法名相同，参数列表不同"
+      },
+      {
+        "id": 45,
+        "text": "以下哪个选项不是接口的特性？（ ）。",
+        "options": [
+          "接口中的方法默认是public",
+          "接口中的变量默认是final",
+          "接口可以有具体方法",
+          "接口可以被实例化"
+        ],
+        "answer": "接口可以被实例化"
+      },
+      {
+        "id": 46,
+        "text": "接口与抽象类的相同点是（ ）。",
+        "options": [
+          "两者都可以有具体实现",
+          "两者都支持多继承",
+          "两者都不能被实例化",
+          "两者都必须有构造方法"
+        ],
+        "answer": "两者都不能被实例化"
+      },
+      {
+        "id": 47,
+        "text": "以下哪个是Java的访问修饰符？（ ）。",
+        "options": ["protected", "default", "final", "abstract"],
+        "answer": "protected"
+      },
+      {
+        "id": 48,
+        "text": "以下关于this关键字的描述正确的是（ ）。",
+        "options": [
+          "this可以在静态方法中使用",
+          "this可以引用当前对象",
+          "this可以用于访问父类的成员",
+          "this是Java中的保留关键字但无具体用途"
+        ],
+        "answer": "this可以引用当前对象"
+      },
+      {
+        "id": 49,
+        "text": "以下关于Java类的描述正确的是（ ）。",
+        "options": [
+          "类可以直接调用其他类的私有方法",
+          "类只能包含一个构造方法",
+          "类是Java的基本单位",
+          "类中可以直接定义方法体"
+        ],
+        "answer": "类是Java的基本单位"
+      },
+      {
+        "id": 50,
+        "text": "以下关于super关键字的描述正确的是（ ）。",
+        "options": [
+          "super用于访问父类的成员",
+          "super用于访问当前对象",
+          "super可以重写父类的方法",
+          "super可以用于定义静态变量"
+        ],
+        "answer": "super用于访问父类的成员"
+      }
+    ]
+  }
 }
+
+    
+

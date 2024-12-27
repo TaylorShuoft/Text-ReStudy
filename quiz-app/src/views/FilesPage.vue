@@ -22,11 +22,12 @@
   
   <script>
   export default {
-    name: "FilesPage",
+    name: "FilesPage",  
     data() {
       return {
         files: [
           { name: "数据分析大题.docx", url: "/Files/数据分析大题.docx" },
+          { name: "Jave纯复习.docx", url: "/Files/Java纯复习.docx" },
          
         ],
       };
