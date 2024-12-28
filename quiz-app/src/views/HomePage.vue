@@ -51,20 +51,36 @@
       <h1>请用手机打开本页面</h1>
     </div>
 
-    <!-- 更新日志 -->
-    <div v-if="!showSubjects && !isSubjectSelected" class="update-log">
-      <div class="update-log-header">
-        <h2>更新日志</h2>
+    <!-- 公告牌 -->
+    <div v-if="!showSubjects && !isSubjectSelected" class="announcement-board">
+      <div class="announcement-header">
+        <h2>公告牌</h2>
+        <div class="nav-buttons">
+          <button @click="showAnnouncement('updates')" :class="{ active: currentAnnouncement === 'updates' }">更新</button>
+          <button @click="showAnnouncement('alerts')" :class="{ active: currentAnnouncement === 'alerts' }">提示</button>
+          <button @click="showAnnouncement('previews')" :class="{ active: currentAnnouncement === 'previews' }">预告</button>
+        </div>
       </div>
-      <ul>
-        <li v-for="(update, index) in updateLogs" :key="index">
-          {{ update.date }} - {{ update.description }}
-        </li>
-      </ul>
+      <div class="announcement-content">
+        <ul v-if="currentAnnouncement === 'updates'">
+          <li v-for="(update, index) in updates" :key="index">
+            {{ update.date }} - {{ update.description }}
+          </li>
+        </ul>
+        <ul v-if="currentAnnouncement === 'alerts'">
+          <li v-for="(alert, index) in alerts" :key="index">
+            {{ alert.date }} - {{ alert.description }}
+          </li>
+        </ul>
+        <ul v-if="currentAnnouncement === 'previews'">
+          <li v-for="(preview, index) in previews" :key="index">
+            {{ preview.date }} - {{ preview.description }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
-
 <script>
 // 导入题库数据
 import quizData from "@/assets/quiz.json";
@@ -77,13 +93,19 @@ export default {
       isSubjectSelected: false, // 是否已经选择了科目
       selectedSubject: "", // 已选择的科目
       isMobile: false, // 判断是否为手机端
-      updateLogs: [
-       
-       { date: '2024-12-27', description: '提示！Python选择后三道不管！' },
+      updates: [
+      { date: '2024-12-28', description: '更新！修复填空题部分题目显示效果！' },
         { date: '2024-12-27', description: '更新！加入Java复习资料！' },
-        { date: '2024-12-27', description: '更新！加入Java基础选择题！' },
+        { date: '2024-12-27', description: '更新！加入Java基础选择题！' }
+        
       ],
-      showUpdateLog: true, // 控制更新日志的显示
+      alerts: [
+        { date: '2024-12-27', description: '提示！Python选择后三道不管！' },
+      ],
+      previews: [
+        { date: '2024-12-28', description: '预告' },
+      ],
+      currentAnnouncement: 'updates', // 控制当前显示的公告类型
     };
   },
   created() {
@@ -117,10 +139,12 @@ export default {
       // 跳转到文件下载页面
       this.$router.push("/files");
     },
+    showAnnouncement(type) {
+      this.currentAnnouncement = type;
+    },
   },
 };
 </script>
-
 <style scoped>
 .home {
   padding: 20px;
@@ -208,7 +232,7 @@ p {
   margin-bottom: 20px;
 }
 
-.update-log {
+.announcement-board {
   margin-top: 40px;
   border: 1px solid #4caf50;
   border-radius: 5px;
@@ -218,25 +242,47 @@ p {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.update-log-header {
+.announcement-header {
   background-color: #4caf50;
   color: white;
   padding: 10px;
   border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.update-log-header h2 {
+.announcement-header h2 {
   margin: 0;
   font-size: 20px;
 }
 
-.update-log ul {
+.nav-buttons button {
+  background-color: #37a150;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.nav-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.nav-buttons button.active {
+  background-color: #49904d;
+}
+
+.announcement-content ul {
   list-style-type: none;
   padding: 0;
   margin-top: 10px;
 }
 
-.update-log li {
+.announcement-content li {
   margin-bottom: 10px;
   font-size: 14px;
   color: #333;

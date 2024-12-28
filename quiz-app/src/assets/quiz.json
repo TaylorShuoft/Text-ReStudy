@@ -380,169 +380,144 @@
         "text": "数据分析是一个有目的地收集和整合数据的过程。",
         "options": ["对", "错"],
         "answer": "错"
-    }
-]
-
-
-          ,
-        "填空题": [
+    }],"填空题": [
     {
         "id": 1,
         "type": "填空题",
-        "text": "分析下列程序的输出结果是                 。\n\nimport numpy as np\n\narr_2d = np.array([[11, 20, 13],[14, 25, 16],[27, 18, 9]])\n\nprint(arr_2d[1, :1])",
-        "options": ["[[14]]", "[20, 14]", "[14]"],
+        "text": "分析下列程序的输出结果是 ________ 。\n\nimport numpy as np\n\narr_2d = np.array([[11, 20, 13],[14, 25, 16],[27, 18, 9]])\n\nprint(arr_2d[1, :1])",
         "answer": "[14]"
     },
     {
         "id": 2,
         "type": "填空题",
-        "text": "分析下列程序的输出结果是                 。\n\nimport numpy as np\nimport pandas as pd\n\nser_obj = pd.Series([4, np.nan, 6, 5, -3, 2])\n\nser_obj.sort_values()",
-        "options": ["1", "6", "-3 2 4 5 6"],
+        "text": "分析下列程序的输出结果是 ________ 。\n\nimport numpy as np\nimport pandas as pd\n\nser_obj = pd.Series([4, np.nan, 6, 5, -3, 2])\n\nser_obj.sort_values()",
         "answer": "-3 2 4 5 6"
     },
     {
         "id": 3,
         "type": "填空题",
-        "text": "分析下列程序的输出结果是                 。\n\nfrom scipy.linalg import  *\nimport numpy as np\n\nA=np.matrix('[1,2;3,4]')\n\nprint(A.T)",
-        "options": ["[[1 3]\n[2 4]]", "[[3 1]\n[4 2]]", "无输出"],
+        "text": "分析下列程序的输出结果是 ________ 。\n\nfrom scipy.linalg import  *\nimport numpy as np\n\nA=np.matrix('[1,2;3,4]')\n\nprint(A.T)",
         "answer": "[[1 3]\n[2 4]]"
     },
     {
         "id": 4,
         "type": "填空题",
-        "text": "分析下列程序的输出结果是                 。\n\nimport jieba\n\nsentence = '人生苦短，我用Pyhton'\n\nterms_list = jieba.cut(sentence, cut_all=True)\n\nprint(' '.join(terms_list))",
-        "options": ["人生 苦短 ， 我 用 Pyhton", "人生苦短，我用Pyhton", "Pyhton 我 用"],
+        "text": "分析下列程序的输出结果是 ________ 。\n\nimport jieba\n\nsentence = '人生苦短，我用Pyhton'\n\nterms_list = jieba.cut(sentence, cut_all=True)\n\nprint(' '.join(terms_list))",
         "answer": "人生 苦短 ， 我 用 Pyhton"
     },
     {
         "id": 5,
         "type": "填空题",
-        "text": "pandas中缺失值一般使用None或np.nan表示，统一标记为________。",
-        "options": ["NaN", "null", "None"],
+        "text": "pandas中缺失值一般使用None或np.nan表示，统一标记为 ________ 。",
         "answer": "NaN"
     },
     {
         "id": 6,
         "type": "填空题",
-        "text": "________ ()方法用于将DataFrame的列索引旋转为行索引。",
-        "options": ["pivot()", "pivot_table()", "melt()"],
+        "text": " ________ ()方法用于将DataFrame的列索引旋转为行索引。",
         "answer": "pivot()"
     },
     {
         "id": 7,
         "type": "填空题",
-        "text": "________是指数据集中的个别值明显偏离它所属数据集的其余值。",
-        "options": ["异常值", "离散值", "偏差值"],
+        "text": " ________是指数据集中的个别值明显偏离它所属数据集的其余值。",
         "answer": "异常值"
     },
     {
         "id": 8,
         "type": "填空题",
-        "text": "from pandas import Series\n\nimport pandas as pd\n\nfrom numpy import NaN\n\nseries_obj = Series([None, 4, NaN])\n\npd.isnull(series_obj)\n\n执行上述程序后，最终输出的结果为（ ）。",
-        "options": ["0     True\n1     False\n2     True", "0 False 1 True 2 False", "无输出"],
+        "text": "from pandas import Series\n\nimport pandas as pd\n\nfrom numpy import NaN\n\nseries_obj = Series([None, 4, NaN])\n\npd.isnull(series_obj)\n\n执行上述程序后，最终输出的结果为（ ________ ）。",
         "answer": "0     True\n1     False\n2     True"
     },
     {
         "id": 9,
         "type": "填空题",
         "text": "由一系列高度不等的矩形条或线段组成，用于反映数据的分布和波动情况。",
-        "options": ["直方图", "柱形图", "散点图"],
         "answer": "直方图"
     },
     {
         "id": 10,
         "type": "填空题",
-        "text": "Matplotlib的        模块封装了快速绘制图表的函数。",
-        "options": ["pyplot", "plotly", "sns"],
+        "text": "Matplotlib的 ________ 模块封装了快速绘制图表的函数。",
         "answer": "pyplot"
-    }, {
+    },
+    {
         "id": 11,
         "type": "填空题",
-        "text": "在下列程序中填写代码。\n\nimport numpy as np\n\nimport pandas as pd\n\nimport matplotlib.pyplot as plt\n\nfig,subs=plt.subplots(2,2)\n\nx=np.arange(1,100)\n\nsubs[0][0].    (x,x*x)     # 第1个图：折线图\n\nsubs[0][1].       (np.arange(0,10), np.random.rand(10)) # 第2个图：散点图\n\nplt.show()",
-        "options": ["plot;scatter", "line;scatter", "plot;line"],
+        "text": "在下列程序中填写代码。\n\nimport numpy as np\n\nimport pandas as pd\n\nimport matplotlib.pyplot as plt\n\nfig,subs=plt.subplots(2,2)\n\nx=np.arange(1,100)\n\nsubs[0][0]. ________ (x,x*x)     # 第1个图：折线图\n\nsubs[0][1]. ________ (np.arange(0,10), np.random.rand(10)) # 第2个图：散点图\n\nplt.show()",
         "answer": "plot;scatter"
     },
     {
         "id": 12,
         "type": "填空题",
-        "text": "在下列程序中填写代码。\n\nimport pandas as pd\n\nimport numpy as np\n\n# 对生成的四列随机数的数据类型绘制条形图\n\ndf1= pd.             (np.random.rand(10,4),columns=['a','b','c','d'])\n\ndf1.                 ",
-        "options": ["DataFrame;plot.bar()", "DataFrame;bar.plot()", "Data;plot.bar()"],
+        "text": "在下列程序中填写代码。\n\nimport pandas as pd\n\nimport numpy as np\n\n# 对生成的四列随机数的数据类型绘制条形图\n\ndf1= pd. ________ (np.random.rand(10,4),columns=['a','b','c','d'])\n\ndf1. ________ ",
         "answer": "DataFrame;plot.bar()"
     },
     {
         "id": 13,
         "type": "填空题",
-        "text": "from sklearn.datasets import load_iris     #加载数据集\n\niris=load_iris()\n\nn_samples,n_features= iris.data.shape\n\nprint(        )   #(150, 4)  表示为150个样本，4个特征\n\nprint(iris.target.shape)   #(150,)\n\nprint('特征值的名字:\\n',        )   #特征名称\n\nprint('鸢尾花的数据集描述:\\n',iris['DESCR'])    #数据描述",
-        "options": ["iris.data.shape;iris.feature_names", "iris.shape;iris.names", "iris.data.shape;iris.feature_list"],
+        "text": "from sklearn.datasets import load_iris     #加载数据集\n\niris=load_iris()\n\nn_samples,n_features= iris.data.shape\n\nprint( ________ )   #(150, 4)  表示为150个样本，4个特征\n\nprint(iris.target.shape)   #(150,)\n\nprint('特征值的名字:\\n', ________ )   #特征名称\n\nprint('鸢尾花的数据集描述:\\n',iris['DESCR'])    #数据描述",
         "answer": "iris.data.shape;iris.feature_names"
     },
     {
         "id": 14,
         "type": "填空题",
-        "text": "import numpy as np\n\nimport matplotlib.pyplot as plt\n\nimport seaborn as sns\n\n# 生成100个成标准正态分布的随机数\n\nx = np.random.        (size=100)\n\n# kde=True，进行核密度估计\n\nsns.       (x,kde=True)  #密度曲线KDE\n\nplt.show()",
-        "options": ["normal;distplot", "rand;histplot", "normal;kdeplot"],
+        "text": "import numpy as np\n\nimport matplotlib.pyplot as plt\n\nimport seaborn as sns\n\n# 生成100个成标准正态分布的随机数\n\nx = np.random. ________ (size=100)\n\n# kde=True，进行核密度估计\n\nsns. ________ (x,kde=True)  #密度曲线KDE\n\nplt.show()",
         "answer": "normal;distplot"
     },
     {
         "id": 15,
         "type": "填空题",
-        "text": "词形归一化包括词干提取和________，它们会将派生词转化为基本形式。",
-        "options": ["词形还原", "词干化", "归一化"],
+        "text": "词形归一化包括词干提取和 ________ ，它们会将派生词转化为基本形式。",
         "answer": "词形还原"
     },
     {
         "id": 16,
         "type": "填空题",
-        "text": "________是指为单词标注一个正确的词性。",
-        "options": ["词性标注", "词义标注", "语义标注"],
+        "text": " ________ 是指为单词标注一个正确的词性。",
         "answer": "词性标注"
     },
     {
         "id": 17,
         "type": "填空题",
-        "text": "________是在处理自然语言文本之前或之后会自动过滤掉的没有具体意义的字或词。",
-        "options": ["停用词", "无意义词", "过滤词"],
+        "text": " ________ 是在处理自然语言文本之前或之后会自动过滤掉的没有具体意义的字或词。",
         "answer": "停用词"
     },
     {
         "id": 18,
         "type": "填空题",
-        "text": "________研究的是计算机怎么模拟或实现人类的学习行为。",
-        "options": ["机器学习", "深度学习", "人工智能"],
+        "text": " ________ 研究的是计算机怎么模拟或实现人类的学习行为。",
         "answer": "机器学习"
     },
     {
         "id": 19,
         "type": "填空题",
-        "text": "数据集的每一行数据称为一个________。",
-        "options": ["样本", "特征", "变量"],
+        "text": "数据集的每一行数据称为一个 ________ 。",
         "answer": "样本"
     },
     {
         "id": 20,
         "type": "填空题",
-        "text": "________是利用一组已知类别的样本作为训练集，调整分类器的参数，使其达到所要求性能的过程。",
-        "options": ["监督学习", "无监督学习", "分类学习"],
+        "text": " ________ 是利用一组已知类别的样本作为训练集，调整分类器的参数，使其达到所要求性能的过程。",
         "answer": "监督学习"
-    },{
+    },
+    {
         "id": 21,
         "type": "填空题",
-        "text": "数据分析是指使用适当的【】对收集来的大量数据进行分析，从中提取有用信息和形成结论，并加以详细研究和概括总结的过程。",
-        "options": ["统计分析方法", "数理统计方法", "数据挖掘方法"],
+        "text": "数据分析是指使用适当的 ________ 对收集来的大量数据进行分析，从中提取有用信息和形成结论，并加以详细研究和概括总结的过程。",
         "answer": "统计分析方法"
-      },
-      {
+    },
+    {
         "id": 22,
         "type": "填空题",
-        "text": "在统计学领域，数据分析可以划分为【】、【】和【】。",
-        "options": [
-          "描述性分析, 推断性分析, 因果性分析",
-          "因果分析, 预测分析, 数据清洗",
-          "数据探索, 相关性分析, 数据建模"
-        ],
+        "text": "在统计学领域，数据分析可以划分为 ________ 、 ________ 和 ________ 。",
         "answer": "描述性分析, 推断性分析, 因果性分析"
-      }
+    }
 ]
+
+
+
+          
     }, "Java基础": {
     "单选题": [
       {

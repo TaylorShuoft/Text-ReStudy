@@ -18,18 +18,29 @@
 
           <!-- 答案选项 -->
           <div class="options">
-            <button
-              v-for="(option, index) in currentOptions"
-              :key="index"
-              class="option-button"
-              :class="{
-                correct: selectedAnswer === option && isCorrect,
-                incorrect: selectedAnswer === option && !isCorrect
-              }"
-              @click="selectAnswer(option)"
-            >
-              {{ option }}
-            </button>
+            <template v-if="questionType !== '填空'">
+              <button
+                v-for="(option, index) in currentOptions"
+                :key="index"
+                class="option-button"
+                :class="{
+                  correct: selectedAnswer === option && isCorrect,
+                  incorrect: selectedAnswer === option && !isCorrect
+                }"
+                @click="selectAnswer(option)"
+              >
+                {{ option }}
+              </button>
+            </template>
+            <template v-else>
+              <input
+                v-model="userInput"
+                type="text"
+                class="fill-in-input"
+                placeholder="请输入答案"
+              />
+              <button class="submit-button" @click="submitFillInAnswer">提交</button>
+            </template>
           </div>
 
           <!-- 右侧导航按钮 -->
@@ -59,7 +70,6 @@
     />
   </div>
 </template>
-
 <script>
 // 导入 JSON 数据
 import quizData from "@/assets/quiz.json";
@@ -77,6 +87,7 @@ export default {
       questions: [], // 当前科目的所有题目
       currentQuestionIndex: 0, // 当前题目索引
       selectedAnswer: null, // 用户选择的答案
+      userInput: "", // 用户输入的答案（填空题）
       isCorrect: false, // 答案是否正确
       showCorrectAnswer: false, // 是否显示正确答案
       answers: [], // 答题状态数组：'correct', 'incorrect', 'unanswered'
@@ -160,6 +171,31 @@ export default {
         }, 2000);
       }
     },
+    submitFillInAnswer() {
+      if (this.isAnsweringDisabled) return; // 如果作答被禁用，则直接返回
+      if (this.isBlurred) return;
+
+      this.selectedAnswer = this.userInput.trim();
+      this.isCorrect = this.selectedAnswer === this.currentQuestion.answer;
+      if (this.isCorrect) {
+        this.answers[this.currentQuestionIndex] = "correct";
+        this.isAnsweringDisabled = true;
+        setTimeout(() => {
+          this.isAnsweringDisabled = false;
+          this.nextQuestion();
+        }, 500);
+      } else {
+        this.answers[this.currentQuestionIndex] = "incorrect";
+        this.showCorrectAnswer = true;
+        this.isAnsweringDisabled = true; // 禁用作答
+
+        setTimeout(() => {
+          this.isAnsweringDisabled = false;
+          this.nextQuestion();
+        }, 2000);
+      }
+      this.userInput = ""; // 清空用户输入
+    },
     nextQuestion() {
       if (this.currentQuestionIndex < this.questions.length - 1) {
         this.currentQuestionIndex++;
@@ -182,6 +218,7 @@ export default {
     },
     resetState() {
       this.selectedAnswer = null;
+      this.userInput = ""; // 清空用户输入
       this.isCorrect = false;
       this.showCorrectAnswer = false;
     },
@@ -202,7 +239,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .quiz {
   padding: 20px;
@@ -294,6 +330,30 @@ export default {
 .option-button.incorrect {
   background-color: #f44336;
   color: white;
+}
+
+.fill-in-input {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
 }
 
 .correct-answer {
