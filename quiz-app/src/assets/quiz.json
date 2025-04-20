@@ -865,8 +865,959 @@
         "answer": "super用于访问父类的成员"
       }
     ]
+  },
+
+  "计算机网络": {
+    "单选题": [
+      {
+        "id": 1,
+        "text": "数据的传输被称为什么？",
+        "options": ["数据存储", "数据传输", "数据备份", "数据处理"],
+        "answer": "数据传输"
+      },
+      {
+        "id": 2,
+        "text": "以下哪种是计算机网络的三种基本拓扑结构之一？",
+        "options": ["环形拓扑", "星形拓扑", "混合拓扑", "点对点拓扑"],
+        "answer": "星形拓扑"
+      },
+      {
+        "id": 3,
+        "text": "在计算机网络中，什么是全双工？",
+        "options": ["只允许发送", "只允许接收", "可以同时发送和接收", "数据以单向流动"],
+        "answer": "可以同时发送和接收"
+      },
+      {
+        "id": 4,
+        "text": "传输速率的单位通常是？",
+        "options": ["比特每秒 (bps)", "字节", "赫兹", "千兆字节 (GB)"],
+        "answer": "比特每秒 (bps)"
+      },
+      {
+        "id": 5,
+        "text": "IP 地址的位数是多少？",
+        "options": ["32 位", "64 位", "128 位", "16 位"],
+        "answer": "32 位"
+      },
+      {
+        "id": 6,
+        "text": "广播地址的作用是什么？",
+        "options": ["用于定位特定设备", "将数据发送给网络中的所有设备", "用于加密通信", "将数据发送给一个设备"],
+        "answer": "将数据发送给网络中的所有设备"
+      },
+      {
+        "id": 7,
+        "text": "以下哪项是私有 IP 地址的一个范围？",
+        "options": ["10.0.0.0 - 10.255.255.255", "192.0.0.0 - 192.0.0.255", "127.0.0.0 - 127.255.255.255", "172.32.0.0 - 172.47.255.255"],
+        "answer": "10.0.0.0 - 10.255.255.255"
+      },
+      {
+        "id": 8,
+        "text": "计算机网络中的传输层协议包括以下哪项？",
+        "options": ["IP", "TCP", "DNS", "HTTP"],
+        "answer": "TCP"
+      },
+      {
+        "id": 9,
+        "text": "计算机网络中的网关设备主要作用是什么？",
+        "options": ["提供连接到互联网", "管理数据包传输", "进行不同网络之间的协议转换", "增强信号强度"],
+        "answer": "进行不同网络之间的协议转换"
+      },
+      {
+        "id": 10,
+        "text": "以下哪项是计算机网络中的交换机（Switch）的作用？",
+        "options": ["连接多个局域网", "转发数据包到正确的目标", "管理数据流量", "加密数据传输"],
+        "answer": "转发数据包到正确的目标"
+      },
+      {
+        "id": 11,
+        "text": "计算机网络中用于避免冲突的协议是？",
+        "options": ["TCP", "HTTP", "CSMA/CD", "UDP"],
+        "answer": "CSMA/CD"
+      },
+      {
+        "id": 12,
+        "text": "HTTP 协议的端口号是？",
+        "options": ["20", "21", "80", "443"],
+        "answer": "80"
+      },
+      {
+        "id": 13,
+        "text": "在计算机网络中，ARP 协议的作用是？",
+        "options": ["解析域名", "将 IP 地址映射为 MAC 地址", "控制数据流", "管理路由"],
+        "answer": "将 IP 地址映射为 MAC 地址"
+      },
+      {
+        "id": 14,
+        "text": "路由器的主要功能是？",
+        "options": ["连接不同的网络", "加强信号", "提供无线网络", "进行数据加密"],
+        "answer": "连接不同的网络"
+      },
+      {
+        "id": 15,
+        "text": "在 OSI 模型中，数据链路层的主要任务是什么？",
+        "options": ["数据传输", "错误检测和纠正", "路由选择", "数据加密"],
+        "answer": "错误检测和纠正"
+      },
+      {
+        "id": 16,
+        "text": "以下哪个协议属于网络层协议？",
+        "options": ["TCP", "UDP", "IP", "FTP"],
+        "answer": "IP"
+      },
+      {
+        "id": 17,
+        "text": "以下哪个协议属于传输层协议？",
+        "options": ["UDP", "ARP", "HTTP", "IP"],
+        "answer": "UDP"
+      },
+      {
+        "id": 18,
+        "text": "VPN 的全称是？",
+        "options": ["Virtual Private Network", "Very Public Network", "Virtual Public Network", "Variable Path Network"],
+        "answer": "Virtual Private Network"
+      },
+      {
+        "id": 19,
+        "text": "在计算机网络中，OSI 模型总共有多少层？",
+        "options": ["5", "6", "7", "8"],
+        "answer": "7"
+      },
+      {
+        "id": 20,
+        "text": "MAC 地址是用来唯一标识计算机的什么？",
+        "options": ["IP 地址", "硬件地址", "传输速率", "数据包"],
+        "answer": "硬件地址"
+      },
+      {
+        "id": 21,
+        "text": "TCP 是一种什么类型的协议？",
+        "options": ["面向连接的", "无连接的", "加密的", "路由的"],
+        "answer": "面向连接的"
+      },
+      {
+        "id": 22,
+        "text": "IP 地址通常分为哪些类别？",
+        "options": ["公网地址和私网地址", "私有地址和保护地址", "公共地址和私人地址", "子网地址和广播地址"],
+        "answer": "公网地址和私网地址"
+      },
+      {
+        "id": 23,
+        "text": "以下哪种设备主要用于提升局域网的通信效率？",
+        "options": ["路由器", "集线器", "交换机", "调制解调器"],
+        "answer": "交换机"
+      },
+      {
+        "id": 24,
+        "text": "ARP 协议使用的端口号是？",
+        "options": ["80", "443", "0", "53"],
+        "answer": "0"
+      },
+      {
+        "id": 25,
+        "text": "网络安全的防火墙主要起什么作用？",
+        "options": ["防止未经授权的访问", "提供互联网连接", "转发数据包", "增加带宽"],
+        "answer": "防止未经授权的访问"
+      },
+      {
+        "id": 26,
+        "text": "以下哪个是 HTTP 协议的安全版本？",
+        "options": ["HTTPS", "HTTP2", "FTP", "UDP"],
+        "answer": "HTTPS"
+      },
+      {
+        "id": 27,
+        "text": "计算机网络中的 NAT 主要用于？",
+        "options": ["网络地址转换", "数据传输控制", "错误检测", "路由选择"],
+        "answer": "网络地址转换"
+      },
+      {
+        "id": 28,
+        "text": "防火墙工作在哪一层？",
+        "options": ["物理层", "链路层", "网络层", "传输层"],
+        "answer": "网络层"
+      },
+      {
+        "id": 29,
+        "text": "下列哪项不是网络层的协议？",
+        "options": ["IP", "ICMP", "ARP", "TCP"],
+        "answer": "TCP"
+      },
+      {
+        "id": 30,
+        "text": "传输层的主要任务是什么？",
+        "options": ["路由选择", "数据加密", "数据流控制", "错误检测"],
+        "answer": "数据流控制"
+      },
+      {
+        "id": 31,
+        "text": "TCP/IP 协议族的核心协议是什么？",
+        "options": ["IP", "TCP", "UDP", "HTTP"],
+        "answer": "TCP"
+      },
+      {
+        "id": 32,
+        "text": "Wi-Fi 是一种什么类型的网络技术？",
+        "options": ["无线局域网", "广域网", "光纤网络", "卫星网络"],
+        "answer": "无线局域网"
+      }
+    ]
+  },
+  "Web前端与JSP": {
+    "单选题": [
+      {
+        "id": 1,
+        "text": "下列样式的效果为______。\np.left{text-align:left;background-color:yellow}",
+        "options": [
+          "使页面中class属性值为left的<p>元素背景色为黄色，内容左对齐",
+          "使页面中的<left>元素背景色为黄色，内容左对齐",
+          "使页面中的<p>元素背景色为黄色，内容左对齐",
+          "使页面中id属性值为left的<p>元素背景色为黄色，内容左对齐"
+        ],
+        "answer": "使页面中class属性值为left的<p>元素背景色为黄色，内容左对齐"
+      },
+      {
+        "id": 2,
+        "text": "关于类别选择器，说法错误的是（）",
+        "options": [
+          "它的选择符以#开头",
+          "它的选择符以.开头",
+          "它通常用于选取某一类对象",
+          "是通过class属性定义的"
+        ],
+        "answer": "它的选择符以#开头"
+      },
+      {
+        "id": 3,
+        "text": "font属性的含义是（）",
+        "options": [
+          "设置字体大小",
+          "设置字体风格",
+          "字体复合属性，可以取值字体所有属性值，之间用空格分开",
+          "设置字体加粗"
+        ],
+        "answer": "字体复合属性，可以取值字体所有属性值，之间用空格分开"
+      },
+      {
+        "id": 4,
+        "text": "关于类别选择器，说法错误的是（）",
+        "options": [
+          "它通常用于选取某一类对象",
+          "它的选择符以.开头",
+          "它的选择符以#开头",
+          "是通过class属性定义的"
+        ],
+        "answer": "它的选择符以#开头"
+      },
+      {
+        "id": 5,
+        "text": "下列样式的效果为______。\np.left{text-align:left;background-color:yellow}",
+        "options": [
+          "使页面中的<p>元素背景色为黄色，内容左对齐",
+          "使页面中的<left>元素背景色为黄色，内容左对齐",
+          "使页面中id属性值为left的<p>元素背景色为黄色，内容左对齐",
+          "使页面中class属性值为left的<p>元素背景色为黄色，内容左对齐"
+        ],
+        "answer": "使页面中class属性值为left的<p>元素背景色为黄色，内容左对齐"
+      },
+      {
+        "id": 6,
+        "text": "下列样式的效果为______。\np.left{text-align:left;background-color:yellow}",
+        "options": [
+          "使页面中class属性值为left的<p>元素背景色为黄色，内容左对齐",
+          "使页面中的<p>元素背景色为黄色，内容左对齐",
+          "使页面中的<left>元素背景色为黄色，内容左对齐",
+          "使页面中id属性值为left的<p>元素背景色为黄色，内容左对齐"
+        ],
+        "answer": "使页面中class属性值为left的<p>元素背景色为黄色，内容左对齐"
+      },
+      {
+        "id": 7,
+        "text": "当页面上通过三种方式引入样式后，从低到高的优先级顺序为______。",
+        "options": [
+          "外部样式，内嵌样式，行内样式",
+          "外部样式，内部样式，内嵌样式",
+          "内嵌样式，行内样式，外部样式",
+          "行内样式，内嵌样式，外部样式"
+        ],
+        "answer": "外部样式，内嵌样式，行内样式"
+      },
+      {
+        "id": 8,
+        "text": "通过<table>标签的（）属性设定边框的粗细",
+        "options": [
+          "bgcolor",
+          "cellpadding",
+          "border",
+          "cellspacing"
+        ],
+        "answer": "border"
+      },
+      {
+        "id": 9,
+        "text": "下列代码运行后的显示效果为______。\n<style>\n    #s {color: orange}\n    div {color: red}\n    span {color: blue}\n    span a {color: green}\n</style>\n<div id=\"s\" class=\"ss\">\n    内容1\n    <span>\n        内容2\n        <a>内容3</a>\n    </span>\n</div>",
+        "options": [
+          "“内容1”橙色，“内容2”蓝色，“内容3”蓝色",
+          "“内容1”红色，“内容2”蓝色，“内容3”蓝色",
+          "“内容1”红色，“内容2”蓝色，“内容3”绿色",
+          "“内容1”橙色，“内容2”蓝色，“内容3”绿色"
+        ],
+        "answer": "“内容1”橙色，“内容2”蓝色，“内容3”绿色"
+      },
+      {
+        "id": 10,
+        "text": "下列标签分别定义表格、行、单元格的是？",
+        "options": [
+          "tbody, tr, td",
+          "table, row, cell",
+          "table, th, td",
+          "table, tr, td"
+        ],
+        "answer": "table, tr, td"
+      },
+      {
+        "id": 11,
+        "text": "用于设置文本下划线效果的样式属性是（）",
+        "options": [
+          "text-decoration",
+          "text-indent",
+          "line-height",
+          "text-align"
+        ],
+        "answer": "text-decoration"
+      },
+      {
+        "id": 12,
+        "text": "指定文字为斜体使用的样式是______",
+        "options": [
+          "font-weight",
+          "font-style",
+          "font-size",
+          "font-family"
+        ],
+        "answer": "font-style"
+      },
+      {
+        "id": 13,
+        "text": "假设Dalian是一个Web服务目录，其虚拟目录为moon。A.jsp保存在Dalian的子目录sea中。那么在Tomcat服务器（端口号8080）所在计算机的浏览器键入下列哪种方式是访问A.jsp的正确方式？",
+        "options": [
+          "http://127.0.0.1:8080/Dalian/A.jsp",
+          "http://127.0.0.1:8080/A.jsp",
+          "http://127.0.0.1:8080/moon/A.jsp",
+          "http://127.0.0.1:8080/moon/sea/A.jsp"
+        ],
+        "answer": "http://127.0.0.1:8080/moon/sea/A.jsp"
+      },
+      {
+        "id": 14,
+        "text": "用于设置文本下划线效果的样式属性是（）",
+        "options": [
+          "text-align",
+          "text-decoration",
+          "line-height",
+          "text-indent"
+        ],
+        "answer": "text-decoration"
+      },
+      {
+        "id": 15,
+        "text": "某个DIV采用了下述样式，其含义是______\nposition:absolute; z-index:-1;",
+        "options": [
+          "采用绝对位置，位于页面的下一层",
+          "采用相对位置，位于页面的下一层",
+          "采用绝对位置，位于页面的上一层",
+          "采用相对位置，位于页面的上一层"
+        ],
+        "answer": "采用绝对位置，位于页面的下一层"
+      },
+      {
+        "id": 16,
+        "text": "以下说法正确的是：（）",
+        "options": [
+          "JSP使用的语言是C++",
+          "Tomcat属于客户端使用的软件",
+          "JSP页面里不可以有JS代码",
+          "JSP是Java Server Page的缩写"
+        ],
+        "answer": "JSP是Java Server Page的缩写"
+      },
+      {
+        "id": 17,
+        "text": "J2EE 中，()类的()方法用于创建会话",
+        "options": [
+          "HtttpSession, newInstance",
+          "HttpServletResponse, newSession",
+          "HttpSession, getSession",
+          "HttpServletRequest, getSession"
+        ],
+        "answer": "HttpServletRequest, getSession"
+      },
+      {
+        "id": 18,
+        "text": "现在session中没有任何属性，阅读下面JSP中的代码，将输出()\n<% out.println(session.getAttribute(\"svse \")); %>",
+        "options": [
+          "什么都不输出",
+          "空字符",
+          "异常信息",
+          "null"
+        ],
+        "answer": "null"
+      },
+      {
+        "id": 19,
+        "text": "在JSP页面中，如果从一个源页面中通过<jsp:forward page=\"urlname\"/>将本页面请求转发至指定URL组件，则在该URL组件(JSP页面)中可处理的共享数据范围是",
+        "options": [
+          "page",
+          "request",
+          "session",
+          "application"
+        ],
+        "answer": "request"
+      },
+      {
+        "id": 20,
+        "text": "在a.jsp中有代码片断如下:\n<form action=\"b.jsp\" method=\"POST\" name=\"form1\">\n    loginName:<input type=\"text\" name=\"loginName\"/>\n    <input type=\"submit\" name=\"submit\" value=\"提交\"/>\n</form>\n在b.jsp中加入下列()代码，可以输出在a.jsp页面上输入的loginName的值",
+        "options": [
+          "<%=(String)request.getAttribute(\"loginName\")%>",
+          "<% String name=(String)request.getAttribute(\"loginname\"); out.println(name); %>",
+          "<%=(String)request.getParameter(\"loginName\")%>",
+          "<% String name=request.getParameter(\"loginname\"); out.println(name); %>"
+        ],
+        "answer": "<%=(String)request.getParameter(\"loginName\")%>"
+      },
+      {
+        "id": 21,
+        "text": "下面关于JSP作用域对象的说法错误的是",
+        "options": [
+          "request对象可以得到请求中的参数",
+          "作用域范围从小到大是request、session、application",
+          "application对象可以被多个应用共享",
+          "session对象可以保存用户信息"
+        ],
+        "answer": "application对象可以被多个应用共享"
+      },
+      {
+        "id": 22,
+        "text": "在1.jsp中有下述代码:\n<%\nrequest.setAttribute(\"name\", \"JSP\");\nsession.setAttribute(\"name\", \"JSP\");\nresponse.sendRedirect(\"2.jsp\");\n%>\n2.jsp代码如下:\n<%\nout.println(request.getAttribute(\"name\"));\nout.println(session.getAttribute(\"name\"));\n%>\n在IE中访问1.jsp后的输出是______。",
+        "options": [
+          "null JSP",
+          "JSP JSP",
+          "null JSP",
+          "JSP JSP"
+        ],
+        "answer": "null JSP"
+      },
+      {
+        "id": 23,
+        "text": "jsp代码如下:\na.jsp\nrequest.setAttribute(\"name\", \"JSP\");\nsession.setAttribute(\"name\", \"JSP\");\nresponse.sendRedirect(\"b.jsp\");\nb.jsp\n<%\nout.println(request.getAttribute(\"name\"));\nout.println(session.getAttribute(\"name\"));\n%>",
+        "options": [
+          "null jsp",
+          "null null",
+          "jsp jsp",
+          "jsp null"
+        ],
+        "answer": "null jsp"
+      },
+      {
+        "id": 24,
+        "text": "以下代码能否编译通过，假如能编译通过，运行时得到什么输出结果()。\n<%\nrequest.setAttribute(\"count\", new Integer(0));\nInteger count = (Integer)request.getAttribute(\"count\");\n%>\n<%=count %>",
+        "options": [
+          "编译不通过",
+          "可以编译运行，输出0",
+          "可以编译通过，但运行无输出",
+          "编译通过，但运行时抛出ClassCastException"
+        ],
+        "answer": "可以编译运行，输出0"
+      },
+      {
+        "id": 25,
+        "text": "pageContext、request、session、application四个内置对象的作用范围从小到大依次为______。",
+        "options": [
+          "request、session、application、pageContext",
+          "request、pageContext、session、application",
+          "request、session、pageContext、application",
+          "pageContext、request、session、application"
+        ],
+        "answer": "pageContext、request、session、application"
+      },
+      {
+        "id": 26,
+        "text": "下列关于JSP内置对象的说法正确的是______。",
+        "options": [
+          "内置对象无需定义，可直接使用",
+          "只有使用Tomcat作为JSP容器时才能使用内置对象",
+          "内置对象只能在JSP的脚本部分使用",
+          "内置对象可以在JSP的声明部分中使用"
+        ],
+        "answer": "内置对象无需定义，可直接使用"
+      },
+      {
+        "id": 27,
+        "text": "表单提交的信息中含有“name=svse”，阅读下面的JSP，a.jsp将输出()\n接受该请求的JSP:\n<% response.sendRedirect(\"a.jsp\"); %>",
+        "options": [
+          "svse",
+          "jsp: <%=request.getParameter(\"name\") %> A、 null",
+          "异常信息",
+          "什么都不输出"
+        ],
+        "answer": "什么都不输出"
+      },
+      {
+        "id": 28,
+        "text": "在JSP页面中，等效于HttpServletResponse的内置对象是",
+        "options": [
+          "response",
+          "request",
+          "out",
+          "session"
+        ],
+        "answer": "response"
+      },
+      {
+        "id": 29,
+        "text": "在一个应用中有2个JSP，横线处可以填入()。\na.jsp:\n<% ______.setAttribute(\"svse\", \"svse\"); %>\nb.jsp:\n<%= ______.getAttribute(\"svse\") %>",
+        "options": [
+          "request, request",
+          "session, session",
+          "application, session",
+          "pageContext, pageContext"
+        ],
+        "answer": "session, session"
+      },
+      {
+        "id": 30,
+        "text": "以下()可用于检索session对象上属性userid的值",
+        "options": [
+          "session.setAttribute(\"userid\")",
+          "request.getParameter(\"userid\")",
+          "request.getAttribute(\"userid\")",
+          "session.getAttribute(\"userid\")"
+        ],
+        "answer": "session.getAttribute(\"userid\")"
+      },
+      {
+        "id": 31,
+        "text": "从HTTP请求中，获得请求参数，应该调用()",
+        "options": [
+          "request对象的getParameter()方法",
+          "session对象的getParameter()方法",
+          "request对象的getAttribute()方法",
+          "session对象的getAttribute()方法"
+        ],
+        "answer": "request对象的getParameter()方法"
+      },
+      {
+        "id": 32,
+        "text": "表单提交的信息中含有“name=svse”，阅读下面的JSP，a.jsp将输出()\n接受该请求的JSP:\n<% response.sendRedirect(\"a.jsp\"); %>",
+        "options": [
+          "异常信息",
+          "jsp: <%=request.getParameter(\"name\") %> A、 null",
+          "svse",
+          "什么都不输出"
+        ],
+        "answer": "什么都不输出"
+      },
+      {
+        "id": 33,
+        "text": "从HTTP请求中，获得请求参数，应该调用()",
+        "options": [
+          "session对象的getAttribute()方法",
+          "request对象的getAttribute()方法",
+          "request对象的getParameter()方法",
+          "session对象的getParameter()方法"
+        ],
+        "answer": "request对象的getParameter()方法"
+      },
+      {
+        "id": 34,
+        "text": "在Java Web中，URL意思是()",
+        "options": [
+          "统一资源定位符",
+          "文件传输协议",
+          "简单邮件传输协议",
+          "超文本传输协议"
+        ],
+        "answer": "统一资源定位符"
+      },
+      {
+        "id": 35,
+        "text": "对于“<%!”、“%>”之间声明的变量，以下()是正确的。",
+        "options": [
+          "是JSP页面的局部变量",
+          "多个用户同时访问该页面时，任何一个用户对这些变量的操作，都会影响到其他用户",
+          "没有默认值",
+          "多个用户同时访问该页面时，每个用户对这些变量的操作都是互相独立的，不会互相影响"
+        ],
+        "answer": "多个用户同时访问该页面时，任何一个用户对这些变量的操作，都会影响到其他用户"
+      },
+      {
+        "id": 36,
+        "text": "在JSP中，假设表单的method=\"post\"，在发送请求时中文乱码处理的正确做法是()",
+        "options": [
+          "request.setContentType(\"text/html;charset=utf-8\")",
+          "response.setContentType(\"text/html;charset=utf-8\")",
+          "request.setCharacterEncoding(\"utf-8\")",
+          "response.setCharacter(\"utf-8\")"
+        ],
+        "answer": "request.setCharacterEncoding(\"utf-8\")"
+      },
+      {
+        "id": 37,
+        "text": "在JSP中，要在index.jsp中引入content.jsp，需要用到的标记是()",
+        "options": [
+          "<%@include src=\"content.jsp\"%>",
+          "<%@page src=\"content.jsp\" %>",
+          "<%@include file=\"content.jsp\" %>",
+          "<%@page file=\"content.jsp\" %>"
+        ],
+        "answer": "<%@include file=\"content.jsp\" %>"
+      },
+      {
+        "id": 38,
+        "text": "在JSP页面中，如果从一个源页面中通过<jsp:forward page=\"urlname\"/>将本页面请求转发至指定URL组件，则在该URL组件(JSP页面)中可处理的共享数据范围是",
+        "options": [
+          "request",
+          "application",
+          "page",
+          "session"
+        ],
+        "answer": "request"
+      },
+      {
+        "id": 39,
+        "text": "下面哪个属性属于include指令标记的属性",
+        "options": [
+          "session",
+          "import",
+          "file",
+          "info"
+        ],
+        "answer": "file"
+      },
+      {
+        "id": 40,
+        "text": "下列注释方式可以在JSP中使用并且客户端无法查看到的是_____________。",
+        "options": [
+          "<%!--注释--%>",
+          "<%--注释--%>",
+          "<!--注释-->",
+          "<--注释-->"
+        ],
+        "answer": "<%--注释--%>"
+      },
+      {
+        "id": 41,
+        "text": "在一个Web应用中，admin目录与images目录为同级目录，现在admin目录下的index.jsp需要引用images目录中的图片top.jpg，以下代码片段正确的是()",
+        "options": [
+          "<img src=\"../images/top.jpg\" width=\"100\" height=\"20\">",
+          "<img src=\"./images/top.jpg\" width=\"100\" height=\"20\">",
+          "<img src=\"images/top.jpg\" width=\"100\" height=\"20\">",
+          "<img src=\"http://mooc1-api.chaoxing.com//images/top.jpg\" width=\"100\" height=\"20\">"
+        ],
+        "answer": "<img src=\"../images/top.jpg\" width=\"100\" height=\"20\">"
+      },
+      {
+        "id": 42,
+        "text": "在Tag中，如果有<%=100+23 %>，JSP使用该Tag文件，会看到()",
+        "options": [
+          "a3",
+          "123",
+          "10023",
+          "‘10023’"
+        ],
+        "answer": "123"
+      },
+      {
+        "id": 43,
+        "text": "给定test1.jsp代码片断，如下:\n<html>\n<jsp:include page=\"test2.jsp\" flush=\"false\">\n    <jsp:param name=\"color\" value=\"red\"/>\n</jsp:include>\n</html>\n要在test2.jsp中输出参数color中的值，以下选项正确的是()",
+        "options": [
+          "<jsp:include param=\"color\"/>",
+          "<jsp:getParam name=\"color\"/>",
+          "<%=request.getAttribute(\"color\")%>",
+          "<%=request.getParameter(\"color\")%>"
+        ],
+        "answer": "<%=request.getParameter(\"color\")%>"
+      },
+      {
+        "id": 44,
+        "text": "在a.jsp中有代码片断如下:\n<form action=\"b.jsp\" method=\"POST\" name=\"form1\">\n    loginName:<input type=\"text\" name=\"loginName\"/>\n    <input type=\"submit\" name=\"submit\" value=\"提交\"/>\n</form>\n在b.jsp中加入下列()代码，可以输出在a.jsp页面上输入的loginName的值",
+        "options": [
+          "<% String name=request.getParameter(\"loginname\"); out.println(name); %>",
+          "<%=(String)request.getAttribute(\"loginName\")%>",
+          "<% String name=(String)request.getAttribute(\"loginname\"); out.println(name); %>",
+          "<%=(String)request.getParameter(\"loginName\")%>"
+        ],
+        "answer": "<%=(String)request.getParameter(\"loginName\")%>"
+      },
+      {
+        "id": 45,
+        "text": "在JSP页面中包含了<%! int i=10;%>元素，i元素是()",
+        "options": [
+          "局部变量声明",
+          "指令标记",
+          "成员变量",
+          "程序片"
+        ],
+        "answer": "成员变量"
+      },
+      {
+        "id": 46,
+        "text": "JSP中正确引用page指令标记的是______",
+        "options": [
+          "<%jsp: page 属性=\"属性值\"%>",
+          "<jsp:page 属性=\"属性值\"/>",
+          "<%@ page 属性=\"属性值\"%>",
+          "<@ page 属性=\"属性值\"/>"
+        ],
+        "answer": "<%@ page 属性=\"属性值\"%>"
+      },
+      {
+        "id": 47,
+        "text": "在JSP页面中有下述代码，第二次访问此页面的输出是______。\n<%! int x = 0; %>\n<% int y = 0; %>\n<%=x++%>,<%=y++%>",
+        "options": [
+          "0,0",
+          "1,1",
+          "0,1",
+          "1,0"
+        ],
+        "answer": "1,0"
+      },
+      {
+        "id": 48,
+        "text": "JSP页面是以()为扩展名进行保存的",
+        "options": [
+          ".jsp",
+          ".java",
+          ".asp",
+          ".jav"
+        ],
+        "answer": ".jsp"
+      },
+      {
+        "id": 49,
+        "text": "给定test1.jsp代码片断，如下:\n<html>\n<jsp:include page=\"test2.jsp\" flush=\"false\">\n    <jsp:param name=\"color\" value=\"red\"/>\n</jsp:include>\n</html>\n要在test2.jsp中输出参数color中的值，以下选项正确的是()",
+        "options": [
+          "<%=request.getAttribute(\"color\")%>",
+          "<jsp:include param=\"color\"/>",
+          "<jsp:getParam name=\"color\"/>",
+          "<%=request.getParameter(\"color\")%>"
+        ],
+        "answer": "<%=request.getParameter(\"color\")%>"
+      },
+      {
+        "id": 50,
+        "text": "test.jsp文件中有如下一行代码:<jsp:useBean id=\"user\" scope=\"__\" type=\"com.UserBean\">要使user对象可以作用于整个应用程序，下划线中应添入()",
+        "options": [
+          "request",
+          "application",
+          "session",
+          "page"
+        ],
+        "answer": "application"
+      },
+      {
+        "id": 51,
+        "text": "在一个Web应用中，admin目录与images目录为同级目录，现在admin目录下的index.jsp需要images目录中的图片top.jpg，以下代码片段正确的是()",
+        "options": [
+          "<img src=\"//images/top.jpg\" width=\"100\" height=\"20\">",
+          "<img src=\"./images/top.jpg\" width=\"100\" height=\"20\">",
+          "<img src=\"images/top.jpg\" width=\"100\" height=\"20\">",
+          "<img src=\"../images/top.jpg\" width=\"100\" height=\"20\">"
+        ],
+        "answer": "<img src=\"../images/top.jpg\" width=\"100\" height=\"20\">"
+      },
+      {
+        "id": 52,
+        "text": "JSP容器也称为()",
+        "options": [
+          "编译器",
+          "转换器",
+          "JSP引擎",
+          "解释器"
+        ],
+        "answer": "JSP引擎"
+      },
+      {
+        "id": 53,
+        "text": "下面选项中，不属于JSP页面构成的元素是()",
+        "options": [
+          "表达式",
+          "HTTP",
+          "声明",
+          "指令"
+        ],
+        "answer": "HTTP"
+      },
+      {
+        "id": 54,
+        "text": "Web容器处理JSP文件需要经过3个阶段，这三个阶段按照顺序依次是()",
+        "options": [
+          "翻译、执行、编译",
+          "编译、翻译、执行",
+          "翻译、编译、执行",
+          "执行、翻译、编译"
+        ],
+        "answer": "翻译、编译、执行"
+      },
+      {
+        "id": 55,
+        "text": "在JSP页面中包含了<% int i=10;%>元素，该元素是()",
+        "options": [
+          "声明",
+          "动作",
+          "指令",
+          "脚本"
+        ],
+        "answer": "脚本"
+      },
+      {
+        "id": 56,
+        "text": "Internet采用的通信协议是________",
+        "options": [
+          "TCP/IP",
+          "HTTP",
+          "FTP",
+          "SMTP"
+        ],
+        "answer": "TCP/IP"
+      },
+      {
+        "id": 57,
+        "text": "下列注释方式可以在JSP中使用并且客户端无法查看到的是_____________。",
+        "options": [
+          "<%--注释--%>",
+          "<--注释-->",
+          "<%!--注释--%>",
+          "<!--注释-->"
+        ],
+        "answer": "<%--注释--%>"
+      }
+    ],
+    "判断题": [
+      {
+        "id": 1,
+        "type": "判断题",
+        "text": "Boy.jsp和boy.jsp是相同的JSP文件名字",
+        "options": ["对", "错"],
+        "answer": "错"
+      },
+      {
+        "id": 2,
+        "type": "判断题",
+        "text": "行内式样式设计是利用style属性直接为元素设置样式，只对当前的标签起作用。",
+        "options": ["对", "错"],
+        "answer": "对"
+      },
+      {
+        "id": 3,
+        "type": "判断题",
+        "text": "在CSS样式中，对于同一元素选择不同选择器，类选择器优先级高于ID选择器",
+        "options": ["对", "错"],
+        "answer": "错"
+      },
+      {
+        "id": 4,
+        "type": "判断题",
+        "text": "安装Tomcat引擎的计算机需要事先安装JDK",
+        "options": ["对", "错"],
+        "answer": "对"
+      },
+      {
+        "id": 5,
+        "type": "判断题",
+        "text": "<%! %>标记符号之间声明的变量在整个JSP页面内都有效",
+        "options": ["对", "错"],
+        "answer": "对"
+      },
+      {
+        "id": 6,
+        "type": "判断题",
+        "text": "允许JSP页面同时含有如下两条page指令: <%@ page contentType=\"text/html;charset=gb2312\" %> <%@ page contentType=\"application/msword\" %>",
+        "options": ["对", "错"],
+        "answer": "错"
+      },
+      {
+        "id": 7,
+        "type": "判断题",
+        "text": "允许JSP页面同时含有如下两条page指令: <%@ page import=\"java.util.*\"%> <%@ page import=\"java.sql.*\" %>",
+        "options": ["对", "错"],
+        "answer": "对"
+      },
+      {
+        "id": 8,
+        "type": "判断题",
+        "text": "<% %>标记符号之间可以定义方法和类",
+        "options": ["对", "错"],
+        "answer": "错"
+      },
+      {
+        "id": 9,
+        "type": "判断题",
+        "text": "include既是一个指令标记也是一个动作标记",
+        "options": ["对", "错"],
+        "answer": "对"
+      },
+      {
+        "id": 10,
+        "type": "判断题",
+        "text": "如果有2个用户访问一个JSP页面，该页面中的Java程序片将被执行1次？",
+        "options": ["对", "错"],
+        "answer": "错"
+      },
+      {
+        "id": 11,
+        "type": "判断题",
+        "text": "<%! %>标记符号之间声明的变量在整个JSP页面内都有效",
+        "options": ["对", "错"],
+        "answer": "对"
+      },
+      {
+        "id": 12,
+        "type": "判断题",
+        "text": "安装Tomcat的计算机需要事先安装JDK吗",
+        "options": ["对", "错"],
+        "answer": "对"
+      },
+      {
+        "id": 13,
+        "type": "判断题",
+        "text": "Boy.jsp和boy.jsp是相同的JSP文件",
+        "options": ["对", "错"],
+        "answer": "对"
+      }
+    ],"填空题": [
+      {
+        "id": 1,
+        "type": "填空题",
+        "text": "在配置Java Web环境时安装 Tomcat前需要事先安装____.",
+        "answer": "JDK"
+      },
+      {
+        "id": 2,
+        "type": "填空题",
+        "text": "JSP是____的缩写",
+        "answer": "Java Server Page"
+      },
+      {
+        "id": 3,
+        "type": "填空题",
+        "text": "按照顺序依次填写下面标记符表示的意义\n<%-- --%> ————____\n<%=    %> ————____\n<%!    %> ————____\n<%     %> ————____\n<%@    %> ————____",
+        "answer": "注释 表达式 声明 程序片 指令语句"
+      },
+      {
+        "id": 4,
+        "type": "填空题",
+        "text": "在1.jsp中有下述代码:\n<%\nrequest.setAttribute____;\nsession.setAttribute____;\n%>\n<jsp:forward page=\"test4-2.jsp\"></jsp:forward>",
+        "answer": "(\"requestkey\", \"requestvalue\") (\"sessionkey\", \"sessionvalue\")"
+      }
+    ]
   }
 }
 
     
+
+
+
+
+
 

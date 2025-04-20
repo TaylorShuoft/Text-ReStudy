@@ -13,6 +13,13 @@
           选填答题
         </button>
       </div>
+
+      <!-- 计算器按钮 -->
+<div v-if="!showSubjects && !isSubjectSelected" class="calculator-button">
+  <button class="calc-button" @click="goToCalculator">
+    计算器
+  </button>
+</div>
       <!-- 文档下载按钮 -->
       <div v-if="!showSubjects && !isSubjectSelected" class="files-download">
         <button class="download-button" @click="goToFilesPage">
@@ -94,16 +101,15 @@ export default {
       selectedSubject: "", // 已选择的科目
       isMobile: false, // 判断是否为手机端
       updates: [
-      { date: '2024-12-28', description: '更新！修复填空题部分题目显示效果！' },
-        { date: '2024-12-27', description: '更新！加入Java复习资料！' },
-        { date: '2024-12-27', description: '更新！加入Java基础选择题！' }
+      { date: '2025-4-13', description: '更新！jsp！' },
+  
         
       ],
       alerts: [
-        { date: '2024-12-27', description: '提示！Python选择后三道不管！' },
+        { date: '2024-12-27', description: '提示！老师没透题😢！' },
       ],
       previews: [
-        { date: '2024-12-28', description: '预告' },
+        { date: '2024-12-28', description: '没办法了，老师没透题😢！' },
       ],
       currentAnnouncement: 'updates', // 控制当前显示的公告类型
     };
@@ -139,6 +145,10 @@ export default {
       // 跳转到文件下载页面
       this.$router.push("/files");
     },
+    goToCalculator() {
+  // 跳转到计算器页面
+  this.$router.push("/counter");
+},
     showAnnouncement(type) {
       this.currentAnnouncement = type;
     },
@@ -146,145 +156,330 @@ export default {
 };
 </script>
 <style scoped>
+/* 全局容器 */
 .home {
   padding: 20px;
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', 'PingFang SC', Arial, sans-serif;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e1e7ef 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.header {
-  margin-bottom: 20px;
-}
-
+/* 页面标题 */
 .header h1 {
-  font-size: 24px;
-  color: #333;
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* 科目选择界面 */
 .subject-list {
   margin: 20px 0;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 90%;
+  animation: fadeIn 0.5s ease-in;
 }
 
 .subject-list h2 {
-  margin-bottom: 10px;
-  color: #007bff;
-  font-size: 20px;
+  font-size: 22px;
+  color: #34495e;
+  margin-bottom: 15px;
+  font-weight: 500;
 }
 
 .subject {
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 .subject-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: #fff;
+  padding: 12px 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
-  width: 200px;
+  width: 220px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .subject-button:hover {
-  background-color: #388e3c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(45deg, #2980b9, #3498db);
 }
 
-.start-button {
-  background-color: #007bff;
-  color: white;
-  padding: 20px 40px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-}
-
-.start-button:hover {
-  background-color: #0056b3;
-}
-
-.download-button {
-  background-color: #ff9800;
-  color: white;
-  padding: 20px 40px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-}
-
-.download-button:hover {
-  background-color: #e68900;
-}
-
-.desktop-warning {
-  text-align: center;
-  color: #ff0000;
-  font-size: 20px;
-  margin-top: 100px;
-}
-
-p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.announcement-board {
-  margin-top: 40px;
-  border: 1px solid #4caf50;
-  border-radius: 5px;
-  padding: 20px;
-  background-color: #e8f5e9;
-  text-align: left;
+.subject-button:active {
+  transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* 开始答题按钮 */
+.start-button {
+  background: linear-gradient(45deg, #1abc9c, #16a085);
+  color: #fff;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 20px 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(45deg, #16a085, #1abc9c);
+}
+
+.start-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 资料下载按钮 */
+.download-button {
+  background: linear-gradient(45deg, #f39c12, #e67e22);
+  color: #fff;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 20px 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(45deg, #e67e22, #f39c12);
+}
+
+.download-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 电脑端警告 */
+.desktop-warning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 公告牌 */
+.announcement-board {
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: slideIn 0.5s ease-out;
+}
+
 .announcement-header {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
-  border-radius: 5px 5px 0 0;
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px 8px 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .announcement-header h2 {
   margin: 0;
   font-size: 20px;
+  font-weight: 500;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 8px;
 }
 
 .nav-buttons button {
-  background-color: #37a150;
-  color: white;
-  padding: 10px 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 8px 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  margin-right: 10px;
+  font-size: 14px;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .nav-buttons button:hover {
-  background-color: #0056b3;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
 }
 
 .nav-buttons button.active {
-  background-color: #49904d;
+  background: #fff;
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.announcement-content {
+  padding: 16px;
+  background: #f9fbfc;
+  border-radius: 0 0 8px 8px;
 }
 
 .announcement-content ul {
   list-style-type: none;
   padding: 0;
-  margin-top: 10px;
+  margin: 0;
 }
 
 .announcement-content li {
-  margin-bottom: 10px;
-  font-size: 14px;
-  color: #333;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #34495e;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.announcement-content li::before {
+  content: '•';
+  color: #2ecc71;
+  font-size: 18px;
+}
+/* 计算器按钮 */
+.calc-button {
+  background: linear-gradient(45deg, #9b59b6, #8e44ad);
+  color: #fff;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 20px 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calc-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(45deg, #8e44ad, #9b59b6);
+}
+
+.calc-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 备案信息 */
+.icp-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 0;
+  padding: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: #7f8c8d;
+  border-top: 1px solid #dfe6e9;
+}
+.icp-footer a {
+  color: #7f8c8d;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.icp-footer a:hover {
+  color: #3498db;
+}
+
+/* 文本样式 */
+p {
+  font-size: 16px;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .home {
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .subject-button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .start-button,
+  .download-button {
+    padding: 14px 32px;
+    font-size: 16px;
+  }
+
+  .announcement-board {
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  .announcement-header h2 {
+    font-size: 18px;
+  }
+
+  .nav-buttons button {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
 }
 </style>

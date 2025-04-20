@@ -51,6 +51,9 @@
         <p v-if="showCorrectAnswer" class="correct-answer">
           正确答案是：{{ currentQuestion.answer }}
         </p>
+        <p v-if="showAnswerRight" class="correct-right">
+          对了！回答正确！：{{ currentQuestion.answer }}
+        </p>
       </div>
 
       <!-- 没有更多题目时 -->
@@ -90,6 +93,7 @@ export default {
       userInput: "", // 用户输入的答案（填空题）
       isCorrect: false, // 答案是否正确
       showCorrectAnswer: false, // 是否显示正确答案
+      showAnswerRight: false,// 是否显示答案正确
       answers: [], // 答题状态数组：'correct', 'incorrect', 'unanswered'
       isBlurred: false, // 是否虚化页面
       isAnsweringDisabled: false, // 是否禁用作答
@@ -156,7 +160,9 @@ export default {
       if (this.isCorrect) {
         this.answers[this.currentQuestionIndex] = "correct";
         this.isAnsweringDisabled = true;
+        this.showAnswerRight = true;
         setTimeout(() => {
+          this.showAnswerRight = false;
           this.isAnsweringDisabled = false;
           this.nextQuestion();
         }, 500);
@@ -180,7 +186,9 @@ export default {
       if (this.isCorrect) {
         this.answers[this.currentQuestionIndex] = "correct";
         this.isAnsweringDisabled = true;
+        this.showAnswerRight = true;
         setTimeout(() => {
+         this.showAnswerRight = false;
           this.isAnsweringDisabled = false;
           this.nextQuestion();
         }, 500);
@@ -361,7 +369,11 @@ export default {
   color: #f44336;
   font-size: 18px;
 }
-
+.correct-right{
+  margin-top: 20px;
+  color: #007bff;
+  font-size: 18px;
+}
 .restart-button {
   background-color: #007bff;
   color: white;
