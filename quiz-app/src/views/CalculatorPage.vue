@@ -3,6 +3,7 @@
       <!-- 页面标题 -->
       <div v-if="isMobile" class="header">
         <h1>计算器</h1>
+        <button class="back-button" @click="goHome">返回首页</button>
       </div>
   
       <!-- 移动端内容 -->
@@ -83,6 +84,9 @@
       selectTool(toolId) {
         this.selectedTool = toolId;
       },
+      goHome() {
+      this.$router.push("/"); // 返回首页
+    },
     },
   };
   </script>
@@ -109,6 +113,21 @@
     letter-spacing: 1px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+  .back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #9b59b6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #8e44ad;
+}
   
   /* 分类卡片列表 */
   .tool-list {
