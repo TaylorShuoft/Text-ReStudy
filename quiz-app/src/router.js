@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'; // 导入 Vue 3 路
 import Quiz from './components/Quiz.vue'; 
 import Home from './views/HomePage.vue'; 
 import Files from './views/FilesPage.vue';
-import counter from './views/counterPage.vue';
+import calculator from './views/CalculatorPage.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -24,9 +24,10 @@ const router = createRouter({
     },
     {
       path: '/counter',
-      name: 'counter',
-      component: counter,
-    }
+      name: 'Calculator',
+      component: calculator,
+    },
+    
   ],
 });
 
