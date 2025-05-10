@@ -4,7 +4,7 @@
       <!-- 左上角返回按钮 -->
       <button class="back-button" @click="goHome">返回首页</button>
       <div class="file-cabinet">
-        <!-- 检查是否有文件，如果没有则显示“当前没有新文件” -->
+        <!-- 检查是否有文件，如果没有则显示"当前没有新文件" -->
         <div v-if="files.length === 0" class="no-files-message">
           <p>当前没有新文件</p>
         </div>
@@ -22,17 +22,28 @@
         </div>
       </div>
     </div>
+    <BottomNav v-if="isMobile" />
 </template>
 
 <script>
+import { ref, onMounted } from 'vue'
+import BottomNav from '@/components/BottomNav.vue'
 export default {
-  name: "FilesPage",  
-  data() {
+  name: "FilesPage",
+  components: { BottomNav },
+  setup() {
+    const isMobile = ref(false)
+    const checkIfMobile = () => {
+      const userAgent = navigator.userAgent.toLowerCase()
+      return /mobile|android|iphone|ipad|phone/i.test(userAgent)
+    }
+    onMounted(() => {
+      isMobile.value = checkIfMobile()
+    })
     return {
-      files: [
-        // 文件列表已经清空
-      ],
-    };
+      isMobile,
+      files: []
+    }
   },
   methods: {
     goHome() {
@@ -134,7 +145,7 @@ export default {
   background-color: #e67e22;
 }
 
-/* 新添加的样式用于“当前没有新文件”消息 */
+/* 新添加的样式用于"当前没有新文件"消息 */
 .no-files-message {
   margin-top: 50px;
   font-size: 18px;

@@ -1,5 +1,26 @@
 <template>
   <div class="home">
+    <!-- 登录按钮 -->
+    <el-button 
+      v-if="!isLoggedIn"
+      class="login-button"
+      type="primary" 
+      circle 
+      @click="goToLogin"
+    >
+      <el-icon><User /></el-icon>
+    </el-button>
+    
+    <el-button 
+      v-else
+      class="login-button"
+      type="success" 
+      circle 
+      @click="handleLogout"
+    >
+      <el-icon><UserFilled /></el-icon>
+    </el-button>
+
     <!-- 页面标题 -->
     <div v-if="isMobile" class="header">
       <h1>是好东西🤞😉👍</h1>
@@ -91,75 +112,146 @@
     <div class="icp-footer">
       <p>鄂ICP备2025096618号-1</p>
     </div>
+
+    <!-- 欢迎弹窗 -->
+    <el-dialog
+      v-model="showWelcomeDialog"
+      title="欢迎使用"
+      width="30%"
+      :show-close="false"
+      :close-on-click-modal="false"
+      :close-on-press-escape="false"
+    >
+      <span>你好你好！</span>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="handleSkipLogin">暂不登录</el-button>
+          <el-button type="primary" @click="goToLogin">立即登录</el-button>
+        </span>
+      </template>
+    </el-dialog>
+    <BottomNav v-if="isMobile" />
   </div>
 </template>
+
 <script>
-// 导入题库数据
-import quizData from "@/assets/quiz.json";
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
+import { User, UserFilled } from '@element-plus/icons-vue'
+import quizData from "@/assets/quiz.json"
+import BottomNav from '@/components/BottomNav.vue'
 
 export default {
-  data() {
-    return {
-      quizData: {}, // 存储题库数据
-      showSubjects: false, // 控制是否显示科目选择界面
-      isSubjectSelected: false, // 是否已经选择了科目
-      selectedSubject: "", // 已选择的科目
-      isMobile: false, // 判断是否为手机端
-      updates: [
+  name: 'HomePage',
+  components: {
+    User,
+    UserFilled,
+    BottomNav
+  },
+  setup() {
+    const router = useRouter()
+    const isLoggedIn = ref(false)
+    const showWelcomeDialog = ref(false)
+    const isMobile = ref(false)
+    const showSubjects = ref(false)
+    const isSubjectSelected = ref(false)
+    const selectedSubject = ref('')
+    const currentAnnouncement = ref('updates')
+
+    const updates = [
       { date: '2025-4-21', description: '更新！计组IEEE754！' },
-  
-        
-      ],
-      alerts: [
-        { date: '2025-4-21', description: '提示！应试教育不要较真！' },
-      ],
-      previews: [
-        { date: '2025-4-21', description: '有功能意见QQ联系，支持+功能！' },
-      ],
-      currentAnnouncement: 'updates', // 控制当前显示的公告类型
-    };
-  },
-  created() {
-    // 加载题库数据
-    this.quizData = quizData;
+    ]
+    const alerts = [
+      { date: '2025-4-21', description: '提示！应试教育不要较真！' },
+    ]
+    const previews = [
+      { date: '2025-4-21', description: '有功能意见QQ联系，支持+功能！' },
+    ]
 
-    // 判断是否为手机端
-    this.isMobile = this.checkIfMobile();
-
-    // 如果是电脑端则锁定鼠标指针
-    if (!this.isMobile) {
-      document.body.style.cursor = "not-allowed";
+    const checkIfMobile = () => {
+      const userAgent = navigator.userAgent.toLowerCase()
+      return /mobile|android|iphone|ipad|phone/i.test(userAgent)
     }
-  },
-  methods: {
-    checkIfMobile() {
-      const userAgent = navigator.userAgent.toLowerCase();
-      return /mobile|android|iphone|ipad|phone/i.test(userAgent);
-    },
-    selectSubject(subject) {
-      this.selectedSubject = subject; // 保存选择的科目
-      this.isSubjectSelected = true; // 标记科目已选择
-      this.showSubjects = false; // 隐藏科目选择界面
-      this.showUpdateLog = false; // 隐藏更新日志
-    },
-    startQuiz() {
-      // 跳转到刷题页面，并传递选择的科目
-      this.$router.push({ path: "/quiz", query: { subject: this.selectedSubject } });
-    },
-    goToFilesPage() {
-      // 跳转到文件下载页面
-      this.$router.push("/files");
-    },
-    goToCalculator() {
-  // 跳转到计算器页面
-  this.$router.push("/counter");
-},
-    showAnnouncement(type) {
-      this.currentAnnouncement = type;
-    },
-  },
-};
+
+    const checkLoginStatus = () => {
+      const token = localStorage.getItem('token')
+      isLoggedIn.value = !!token
+      if (!isLoggedIn.value && !localStorage.getItem('hasVisited')) {
+        showWelcomeDialog.value = true
+        localStorage.setItem('hasVisited', 'true')
+      }
+    }
+
+    const goToLogin = () => {
+      router.push('/login')
+    }
+
+    const handleLogout = () => {
+      localStorage.removeItem('token')
+      isLoggedIn.value = false
+      ElMessage.success('已退出登录')
+    }
+
+    const handleSkipLogin = () => {
+      showWelcomeDialog.value = false
+    }
+
+    const selectSubject = (subject) => {
+      selectedSubject.value = subject
+      isSubjectSelected.value = true
+      showSubjects.value = false
+    }
+
+    const startQuiz = () => {
+      router.push({ path: "/quiz", query: { subject: selectedSubject.value } })
+    }
+
+    const goToFilesPage = () => {
+      router.push("/files")
+    }
+
+    const goToCalculator = () => {
+      router.push("/counter")
+    }
+
+    const showAnnouncement = (type) => {
+      currentAnnouncement.value = type
+    }
+
+    onMounted(() => {
+      isMobile.value = checkIfMobile()
+      if (!isMobile.value) {
+        document.body.style.cursor = "not-allowed"
+      }
+      checkLoginStatus()
+    })
+
+    return {
+      isLoggedIn,
+      showWelcomeDialog,
+      isMobile,
+      showSubjects,
+      isSubjectSelected,
+      selectedSubject,
+      currentAnnouncement,
+      updates,
+      alerts,
+      previews,
+      quizData,
+      goToLogin,
+      handleLogout,
+      handleSkipLogin,
+      selectSubject,
+      startQuiz,
+      goToFilesPage,
+      goToCalculator,
+      showAnnouncement
+    }
+  }
+}
 </script>
+
 <style scoped>
 /* 全局容器 */
 .home {
@@ -374,6 +466,7 @@ export default {
   color: #2ecc71;
   font-size: 18px;
 }
+
 /* 计算器按钮 */
 .calc-button {
   background: linear-gradient(45deg, #9b59b6, #8e44ad);
@@ -401,16 +494,16 @@ export default {
 
 /* 备案信息 */
 .icp-footer {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  bottom: auto;
   left: 0;
   width: 100%;
-  margin-top: 0;
-  padding: 12px;
+  padding: 10px 0;
   text-align: center;
   font-size: 12px;
   color: #7f8c8d;
   border-top: 1px solid #dfe6e9;
+  margin-top: 20px;
 }
 
 .icp-footer a {
@@ -422,6 +515,7 @@ export default {
 .icp-footer a:hover {
   color: #3498db;
 }
+
 /* 文本样式 */
 p {
   font-size: 16px;
@@ -486,5 +580,22 @@ p {
     padding: 6px 10px;
     font-size: 13px;
   }
+}
+
+.login-button {
+  position: fixed;
+  top: 40px;
+  right: 60px;
+  z-index: 1000;
+}
+
+.login-button :deep(.el-icon) {
+  font-size: 20px;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }
 </style>
