@@ -58,7 +58,7 @@
         tools: [
           { id: 'original-inverse-complement', name: '原反补计算', component: 'OriginalInverseComplement' },
           { id: 'ieee754', name: 'IEEE754 转换', component: 'IEEE754' },
-          { id: 'complement-arithmetic', name: '补码加减法 & 溢出判断', component: 'ComplementArithmetic' },
+          { id: 'complement-arithmetic', name: '补码溢出判断', component: 'ComplementArithmetic' },
           { id: 'floating-point', name: '浮点计算', component: 'FloatingPoint' },
         ],
       };
@@ -139,6 +139,7 @@
   }
   
   .tool-card {
+    width:100%;
     background: #ffffff;
     border-radius: 12px;
     padding: 20px;
@@ -183,7 +184,7 @@
   
   /* 工具容器 */
   .tool-container {
-    width: 90%;
+    width: 100%;
     margin: 20px 0;
   }
   

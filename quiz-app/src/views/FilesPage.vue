@@ -108,7 +108,7 @@ export default {
   position: absolute;
   top: 20px;
   left: 20px;
-  background-color: #007bff;
+  background-color: #f39c12;
   color: white;
   border: none;
   border-radius: 5px;
@@ -117,13 +117,13 @@ export default {
 }
 
 .back-button:hover {
-  background-color: #0056b3;
+  background-color: #e67e22;
 }
 
 .download-button {
   text-decoration: none;
   color: #fff;
-  background-color: #007bff;
+  background-color: #f39c12;
   padding: 8px 12px;
   border-radius: 5px;
   font-size: 12px;
@@ -131,7 +131,7 @@ export default {
 }
 
 .download-button:hover {
-  background-color: #0056b3;
+  background-color: #e67e22;
 }
 
 /* 新添加的样式用于“当前没有新文件”消息 */

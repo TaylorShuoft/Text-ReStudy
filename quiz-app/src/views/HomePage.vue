@@ -2,7 +2,7 @@
   <div class="home">
     <!-- 页面标题 -->
     <div v-if="isMobile" class="header">
-      <h1>考试题库</h1>
+      <h1>是好东西🤞😉👍</h1>
     </div>
 
     <!-- 手机端显示的内容 -->
@@ -15,11 +15,11 @@
       </div>
 
       <!-- 计算器按钮 -->
-<div v-if="!showSubjects && !isSubjectSelected" class="calculator-button">
-  <button class="calc-button" @click="goToCalculator">
-    计算器
-  </button>
-</div>
+      <div v-if="!showSubjects && !isSubjectSelected" class="calculator-button">
+        <button class="calc-button" @click="goToCalculator">
+          计算器
+        </button>
+      </div>
       <!-- 文档下载按钮 -->
       <div v-if="!showSubjects && !isSubjectSelected" class="files-download">
         <button class="download-button" @click="goToFilesPage">
@@ -86,6 +86,11 @@
         </ul>
       </div>
     </div>
+
+    <!-- 备案信息 -->
+    <div class="icp-footer">
+      <p>鄂ICP备2025096618号-1</p>
+    </div>
   </div>
 </template>
 <script>
@@ -101,15 +106,15 @@ export default {
       selectedSubject: "", // 已选择的科目
       isMobile: false, // 判断是否为手机端
       updates: [
-      { date: '2025-4-13', description: '更新！jsp！' },
+      { date: '2025-4-21', description: '更新！计组IEEE754！' },
   
         
       ],
       alerts: [
-        { date: '2024-12-27', description: '提示！老师没透题😢！' },
+        { date: '2025-4-21', description: '提示！应试教育不要较真！' },
       ],
       previews: [
-        { date: '2024-12-28', description: '没办法了，老师没透题😢！' },
+        { date: '2025-4-21', description: '有功能意见QQ联系，支持+功能！' },
       ],
       currentAnnouncement: 'updates', // 控制当前显示的公告类型
     };
@@ -226,7 +231,7 @@ export default {
 
 /* 开始答题按钮 */
 .start-button {
-  background: linear-gradient(45deg, #1abc9c, #16a085);
+  background: linear-gradient(45deg, #3498db, #3498db);
   color: #fff;
   padding: 16px 36px;
   border: none;
@@ -241,7 +246,7 @@ export default {
 .start-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  background: linear-gradient(45deg, #16a085, #1abc9c);
+  background: linear-gradient(45deg, #3498db, #3498db);
 }
 
 .start-button:active {
@@ -407,6 +412,7 @@ export default {
   color: #7f8c8d;
   border-top: 1px solid #dfe6e9;
 }
+
 .icp-footer a {
   color: #7f8c8d;
   text-decoration: none;
@@ -416,7 +422,6 @@ export default {
 .icp-footer a:hover {
   color: #3498db;
 }
-
 /* 文本样式 */
 p {
   font-size: 16px;
